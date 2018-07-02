@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="sp17/theme/css/main.css" />
 
-Data 8: The Foundations of Data Science
+YData: The Foundations of Data Science
 ====
 
 The UC Berkeley Foundations of Data Science course combines three perspectives:
