@@ -9,11 +9,11 @@ Derived from Berkeley's popular [Data 8](http://data8.org) course, YData is an i
 computational and programming skills along with inferential thinking.
 
 YData is designed to be accessible to students with little or no
-background in computing, programming, or statistics, but also 
-engaging for more technically oriented students through the extensive
+background in computing, programming, or statistics. At the same time, 
+it is meant to be engaging for more technically oriented students, through the extensive
 use of examples and hands-on data analysis.  The course is based
-on the Python programming language, and a special purpose computing
-
+on the Python programming language, and a special purpose cloud-based computing
+platform.
 
 Materials
 ---
