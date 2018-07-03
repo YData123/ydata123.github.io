@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="sp17/theme/css/main.css" />
+<link rel="stylesheet" href="theme/css/main.css" />
 
 YData: The Foundations of Data Science
 ====
 
-The UC Berkeley Foundations of Data Science course combines three perspectives:
+The Yale Foundations of Data Science course combines three perspectives:
 inferential thinking, computational thinking, and real-world relevance. Given
 data arising from some real-world phenomenon, how does one analyze that data so
 as to understand that phenomenon? The course teaches critical concepts and
