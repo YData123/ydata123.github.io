@@ -1,18 +1,19 @@
 <link rel="stylesheet" href="theme/css/main.css" />
 
-YData: The Foundations of Data Science
+YData: An Introduction to Data Science
 ====
 
-The Yale Foundations of Data Science course combines three perspectives:
-inferential thinking, computational thinking, and real-world relevance. Given
-data arising from some real-world phenomenon, how does one analyze that data so
-as to understand that phenomenon? The course teaches critical concepts and
-skills in computer programming and statistical inference, in conjunction with
-hands-on analysis of real-world datasets, including economic data, document
-collections, geographical data, and social networks. It delves into social
-issues surrounding data analysis such as privacy and design.
+Computational and statistical skills are no longer optional in our increasingly data-driven world.
+This course aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
+Derived from Berkeley's popular [data8](data8.github.io) course, YData is an introduction to data science that emphasizes
+computational and programming skills along with inferential thinking.
 
-The course is offered in partnership with the [Berkeley Division of Data Sciences](http://data.berkeley.edu). 
+YData is designed to be accessible to students with little or no
+background in computing, programming, or statistics, but also 
+engaging for more technically oriented students through the extensive
+use of examples and hands-on data analysis.  The course is based
+on the Python programming language, and a special purpose computing
+
 
 Materials
 ---
