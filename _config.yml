@@ -2,7 +2,7 @@
 name: YData123
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: YData: An Introduction to Data Science
+description: An Introduction to Data Science
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
 url: http://ydata123.org/
