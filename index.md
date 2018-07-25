@@ -3,23 +3,22 @@
 YData: An Introduction to Data Science
 ====
 
-Computational and statistical skills are no longer optional in our increasingly data-driven world.
-This course aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
+YData aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
 Derived from Berkeley's popular [Data 8](http://data8.org) course, YData is an introduction to data science that emphasizes
 computational and programming skills along with inferential thinking.
 
-YData is designed to be accessible to students with little or no
+The course is designed to be accessible to students with little or no
 background in computing, programming, or statistics. At the same time, 
 it is meant to be engaging for more technically oriented students, through the extensive
 use of examples and hands-on data analysis.  The course is based
-on the Python programming language, and a special purpose cloud-based computing
+on the Python programming language and a special-purpose cloud computing
 platform.
 
 Materials
 ---
 
-All materials for the course, including the textbook and assignments, are
-available for free online under a Creative Commons license.
+Much of the material course, including the textbook and some assignments, is derived from [Data 8](http://data8.org),
+which has been made available online under a Creative Commons license.
 
 **Textbook**: [Computational and Inferential Thinking: The Foundations of Data
 Science](http://inferentialthinking.com) is a free online textbook that
