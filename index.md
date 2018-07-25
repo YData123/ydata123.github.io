@@ -30,7 +30,7 @@ Computing
 
 The course is based on the Python programming language and a
 special-purpose cloud computing platform for students to edit and
-execute their code as Jupyter notebooks. This "levels the playing field" with respect to
+execute their code in Jupyter notebooks. This "levels the playing field" with respect to
 prior computing and programming experience, and makes it easy for
 students to get started. The computing platform for YData is being
 developed by [Ben
