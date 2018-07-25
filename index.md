@@ -18,10 +18,10 @@ Materials
 
 Much of the content for the course is derived from [Data 8](http://data8.org),
 which has made assignments, the textbook and other materials available online under a Creative Commons license.
-The textbook [Computational and Inferential Thinking: The Foundations of Data
-Science](http://inferentialthinking.com) is a free online resource that
+The textbook is [Computational and Inferential Thinking: The Foundations of Data
+Science](http://inferentialthinking.com), a free online resource that
 includes interactive Jupyter notebooks and public data sets for all examples.
-The textbook source is maintained as an [open source
+It's maintained as an [open source
 project](https://github.com/data-8/textbook).
 
 
