@@ -42,7 +42,6 @@ when using the Web-based computing platform provided by the course.
 
 The course provides a hosted environment for students to edit and execute their
 code. This ``levels the playing field'' with respect to prior computing and programming experience,
-and makes it easy for students to get started. For the code cognoscenti, the platform 
+and makes it easy for students to get started. (For the code cognoscenti, the platform 
 is based on a [Kubernetes-based deployment of
-JupyterHub](https://github.com/data-8/jupyterhub-k8s/blob/master/README.md) that
-was developed at Berkeley.
+JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).)
