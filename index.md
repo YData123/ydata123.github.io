@@ -45,3 +45,8 @@ notebooks use a Python 3 installation with the standard modules from
 [an Anaconda installation](https://www.continuum.io/downloads) such as
 Numpy and Matplotlib, as well as the Berkeley
 [datascience](https://pypi.python.org/pypi/datascience/) module.)
+
+Stay tuned
+---
+
+The course will first be offered at Yale in Spring 2019. Further details will be available during the Fall 2018 semester. 
