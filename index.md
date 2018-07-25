@@ -37,11 +37,9 @@ with the standard modules from [an Anaconda
 installation](https://www.continuum.io/downloads) such as Numpy and Matplotlib,
 as well as the Berkeley [datascience](https://pypi.python.org/pypi/datascience/) module.
 
-But students are not required to know anything about the details of these installations
-when using the Web-based computing platform provided by the course.
-
 The course provides a hosted environment for students to edit and execute their
-code. This ``levels the playing field'' with respect to prior computing and programming experience,
-and makes it easy for students to get started. (For the code cognoscenti, the platform 
+code. This "levels the playing field" with respect to prior computing and programming experience,
+and makes it easy for students to get started. The computing platform for YData is being
+developed by [Ben Evans](https://research.computing.yale.edu/about/staff/benjamin-evans) at the [Yale Center for Research Computing (YCRC)](https://research.computing.yale.edu/). (For the code cognoscenti, the platform 
 is based on a [Kubernetes-based deployment of
 JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).)
