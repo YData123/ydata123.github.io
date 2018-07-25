@@ -17,8 +17,8 @@ platform.
 Materials
 ---
 
-Much of the material course, including the textbook and some assignments, is derived from [Data 8](http://data8.org),
-which has been made available online under a Creative Commons license.
+Much of the material course is derived from [Data 8](http://data8.org),
+which has been made available online as an open source project under a Creative Commons license.
 
 **Textbook**: [Computational and Inferential Thinking: The Foundations of Data
 Science](http://inferentialthinking.com) is a free online textbook that
