@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="theme/css/main.css" />
 
 ![noisy Y](./noiseY-150.png)
+
 YData: An Introduction to Data Science 
 ====
 
