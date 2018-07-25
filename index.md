@@ -47,6 +47,6 @@ Numpy and Matplotlib, as well as the Berkeley
 [datascience](https://pypi.python.org/pypi/datascience/) module.)
 
 Spring 2019
-----
+-
 
 The course will be offered for the first time at Yale in Spring 2019. Further details will be available here during the Fall 2018 semester. 
