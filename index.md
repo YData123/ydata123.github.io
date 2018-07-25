@@ -28,16 +28,20 @@ project](https://github.com/data-8/textbook).
 Computing
 ---
 
-The course is based
-on the Python programming language and a special-purpose cloud computing
-platform. Exercises and assignments are presented as Jupyter notebooks, using a Python 3 installation
-with the standard modules from [an Anaconda
-installation](https://www.continuum.io/downloads) such as Numpy and Matplotlib,
-as well as the Berkeley [datascience](https://pypi.python.org/pypi/datascience/) module.
+The course is based on the Python programming language and a
+special-purpose cloud computing platform for students to edit and
+execute their code as Jupyter notebooks. This "levels the playing field" with respect to
+prior computing and programming experience, and makes it easy for
+students to get started. The computing platform for YData is being
+developed by [Ben
+Evans](https://research.computing.yale.edu/about/staff/benjamin-evans)
+at the [Yale Center for Research Computing
+(YCRC)](https://research.computing.yale.edu/).
 
-The course provides a hosted environment for students to edit and execute their
-code. This "levels the playing field" with respect to prior computing and programming experience,
-and makes it easy for students to get started. The computing platform for YData is being
-developed by [Ben Evans](https://research.computing.yale.edu/about/staff/benjamin-evans) at the [Yale Center for Research Computing (YCRC)](https://research.computing.yale.edu/). (For the code cognoscenti, the platform 
-is based on a [Kubernetes-based deployment of
-JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/).)
+(For the code cognoscenti, the platform is based on a
+[Kubernetes-based deployment of
+JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/), and
+notebooks use a Python 3 installation with the standard modules from
+[an Anaconda installation](https://www.continuum.io/downloads) such as
+Numpy and Matplotlib, as well as the Berkeley
+[datascience](https://pypi.python.org/pypi/datascience/) module.)
