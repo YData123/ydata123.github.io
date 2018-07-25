@@ -7,7 +7,7 @@ YData: An Introduction to Data Science
 ====
 
 YData aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
-Derived from Berkeley's popular [Data 8](http://data8.org) course, YData is an introduction to data science that emphasizes
+Based on Berkeley's popular [Data 8](http://data8.org) course, YData is an introduction to data science that emphasizes
 computational and programming skills along with inferential thinking.
 
 The course is designed to be accessible to students with little or no
