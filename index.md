@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="theme/css/main.css" />
 
-YData: An Introduction to Data Science
+YData: An Introduction to Data Science ![noisy Y](./noiseY.png "noiseY")
 ====
 
 YData aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
