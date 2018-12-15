@@ -53,4 +53,5 @@ Numpy and Matplotlib, as well as the Berkeley
 Spring 2019
 ---
 
-The course will be offered for the first time at Yale in Spring 2019. Further details will be available here during the Fall 2018 semester. 
+The course will be offered for the first time at Yale in Spring 2019. Enrollment will be limited, with preference given to undergraduates.
+
