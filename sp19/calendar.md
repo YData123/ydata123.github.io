@@ -21,7 +21,7 @@ Lecture: MWF 10:30-11:20, [LUCE 101](https://map.yale.edu/place/building/LUCE?)
 
  Date |  Topic | Lecture | Reading | Assignment
 ----------- | ------------- | ------------ | ------------- | -----------
-Mon 1/14 |      Introduction	| [Demos](https://mybinder.org/v2/gh/YData123/sds123/master?filepath=/demos/lecture01/lec01.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture01/ydata_lecture_01.pdf) | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html)
+Mon 1/14 |      Introduction	| [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture01/lec01.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture01/ydata_lecture_01.pdf) | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html)
 Wed 1/16 |      Cause and Effect | 	[Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture02/ydata_lecture_02.pdf)  | [Chapter 2](https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html) | [Practice 01: Expressions](https://mybinder.org/v2/gh/YData123/sds123/master?filepath=/practice_exercises/practice01/practice01.ipynb)
 Fri 1/18 | Tables | Demos, Slides | [Chapter 3](https://www.inferentialthinking.com/chapters/03/programming-in-python.html) | Homework 01 (Due Thu 1/24)
 Mon 1/21 | No class (MLK day) | — | — | —
