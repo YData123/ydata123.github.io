@@ -54,5 +54,7 @@ Spring 2019
 ---
 
 The course is being offered for the first time at Yale in Spring 2019. Enrollment will be limited, with preference given to undergraduates.
-The calendar for the course, with links to the programming materials, is at [ydata123.org/sp19](http://ydata123.org/sp19)
+The calendar for the course, with links to the programming materials, is at [ydata123.org/sp19](http://ydata123.org/sp19/calendar.html)
+
+
 
