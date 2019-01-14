@@ -14,6 +14,9 @@ computational and programming skills along with inferential thinking.
 
 Calendar Spring 2019
 ---
+Instructors: Jessi Cisewski-Kehe and John Lafferty<br>
+Lecture: MWF 10:30-11:20, [LUCE 101](https://map.yale.edu/place/building/LUCE?)
+
 
 
  Date |  Topic | Lecture | Reading | Assignment
