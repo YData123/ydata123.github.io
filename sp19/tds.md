@@ -17,11 +17,12 @@ product reviews. Methodologies include scraping, wrangling, hashing,
 sorting, regressing, embedding, and probabilistic modeling.  The
 course is based on the Python programming language within a cloud
 computing platform, and is paced to be accessible to students who have
-previously taken or are currently enrolled in YData (S\&DS 123).
+previously taken or are currently enrolled in YData (S&DS 123).
 
 Calendar Spring 2019
 ---
 Instructor: John Lafferty<br>
+ULA: Yi Chern Tan <br>
 Meeting time: Thurs 9:25-11:15, [LC 208](https://map.yale.edu/place/building/LC?)
 
 
