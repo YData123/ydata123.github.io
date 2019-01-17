@@ -26,6 +26,6 @@ Meeting time: Thurs 9:25-11:15, [LC 208](https://map.yale.edu/place/building/LC?
 
 
 
- Date |  Topic | Notes | Assignment
+ Date |  Topic | Notes | Lab
 ----------- | ------------- | ------------- | -----------
-Thu 1/17 |      Introduction & Course Overview	| &mdash; | | [Demo](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lec01.ipynb) [Lab 01: Notebooks and Expressions in Python](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lab01.ipynb)
+Thu 1/17 |      Introduction & Course Overview	| &mdash; | [Demo (from YData)](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lec01.ipynb) <br> [Lab 01: Notebooks and Expressions in Python](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lab01.ipynb)
