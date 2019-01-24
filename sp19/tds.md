@@ -29,4 +29,5 @@ Meeting time: Thurs 9:25-11:15, [LC 208](https://map.yale.edu/place/building/LC?
 
  Date |  Topic | Notes | Lab
 ----------- | ------------- | ------------- | -----------
-Thu 1/17 |      Introduction & Course Overview	| &mdash; | [Demo (from YData)](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lec01.ipynb) <br> [Lab 01: Notebooks and Expressions in Python](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lab01.ipynb)
+Thu 1/17 |      Introduction & Course Overview	| [Slides](https://github.com/YData123/sds171/raw/master/notes/overview.pdf) | [Demo (from YData)](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lec01.ipynb) <br> [Lab 01: Notebooks and Expressions in Python](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab01/lab01.ipynb)
+Thu 1/24 |      Gutenberg books <br> Dictionaries and hashing	| &mdash; |  [Lab 02: Project Gutenberg Books (1/2)](http://sds171.ydata123.org/user-redirect/interact?account=YData123&repo=sds171&branch=master&path=labs/lab02/lab02.ipynb)
