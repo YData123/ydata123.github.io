@@ -9,3 +9,6 @@ url: http://ydata123.org/
 
 # favicon
 favicon: favicon.ico
+
+gems:
+  - jekyll-redirect-from
