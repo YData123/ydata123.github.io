@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="theme/css/main.css" />
+++<link rel="stylesheet" href="theme/css/main.css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 ![noisy Y](./noiseY-150.png)
@@ -39,7 +39,7 @@ Fri 2/15 | Chance | [Demos](http://hub.ydata123.org/user-redirect/interact?accou
 Mon 2/18 | Sampling | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture15/lec15.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture15/ydata_lecture_15.pdf) |   [10](https://www.inferentialthinking.com/chapters/10/sampling-and-empirical-distributions.html), [10.1](https://www.inferentialthinking.com/chapters/10/1/empirical-distributions.html), [10.2](https://www.inferentialthinking.com/chapters/10/2/sampling-from-a-population.html) | 
 Wed 2/20 | Models |   [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture16/lec16.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture16/ydata_lecture_16.pdf) |  [10.3](https://www.inferentialthinking.com/chapters/10/3/empirical-distribution-of-a-statistic.html), [11.1](https://www.inferentialthinking.com/chapters/11/1/assessing-models.html) |  [Practice 05: Sampling](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=practice_exercises/practice05/practice05.ipynb)
 Fri 2/22 | Comparing Distributions | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture17/lec17.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture17/ydata_lecture_17.pdf) | [11.1](https://www.inferentialthinking.com/chapters/11/1/assessing-models.html), [11.2](https://www.inferentialthinking.com/chapters/11/2/multiple-categories.html) | [Homework 06](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=hw/hw06/hw06.ipynb) (Due Thu 2/27) <br> Project 1
-Mon 2/25 | Decisions and Uncertainty | Demos, Slides | [11.3](https://www.inferentialthinking.com/chapters/11/3/decisions-and-uncertainty.html) | 
+Mon 2/25 | Decisions and Uncertainty | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture18/lec18.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture18/ydata_lecture_18.pdf) | [11.3](https://www.inferentialthinking.com/chapters/11/3/decisions-and-uncertainty.html) | 
 Wed 2/27 | A/B Testing | Demos, Slides | [12.1](https://www.inferentialthinking.com/chapters/12/1/ab-testing.html), [12.2](https://www.inferentialthinking.com/chapters/12/2/deflategate.html) | Practice 06: Assessing Models
 Fri 3/1 |  Causality | Demos, Slides | [12.3](https://www.inferentialthinking.com/chapters/12/3/causality.html) | Homework 07 (Due Wed 3/7)
 Mon 3/4 |  Examples |  Slides |  | Midterm Review
