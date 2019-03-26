@@ -57,7 +57,7 @@ Wed 4/10 | Least Squares | Demos, Slides | [15.3](https://www.inferentialthinkin
 Fri 4/12 | Residuals | Demos, Slides | [15.5](https://www.inferentialthinking.com/chapters/15/5/visual-diagnostics.html), [15.6](https://www.inferentialthinking.com/chapters/15/6/numerical-diagnostics.html) | Homework 10 (Due Thu 4/18) <br> Project 2 due <br> Project 3: Classifying Movies <br> (Optional; Checkpoint Fri 4/19; Due Fri 4/26)
 Mon 4/15 |  Regression Inference | Demos, Slides | [Chapter 16](https://www.inferentialthinking.com/chapters/16/inference-for-regression.html) | 
 Wed 4/17 |  Classification | Demos, Slides | [17](https://www.inferentialthinking.com/chapters/17/classification.html), [17.1](https://www.inferentialthinking.com/chapters/17/1/nearest-neighbors.html), [17.2](https://www.inferentialthinking.com/chapters/17/2/training-and-testing.html), [17.3](https://www.inferentialthinking.com/chapters/17/3/rows-of-tables.html) | 
-Fri 4/19 | Classifiers | Demos, Slides | [17.4](https://www.inferentialthinking.com/chapters/17/4/implementing-the-classifier.html)| Homework 11 (Due Thu 4/19) <br> Project 3 checkpoint
+Fri 4/19 | Classifiers | Demos, Slides | [17.4](https://www.inferentialthinking.com/chapters/17/4/implementing-the-classifier.html)| Homework 11 (Due Thu 4/25) <br> Project 3 checkpoint
 Mon 4/22 | Decisions | Demos, Slides | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | 
 Wed 4/24 | Case Study: Health | Demos, Slides |  | Practice 09: Regression
 Fri 4/26 | Conclusion | Demos, Slides |  | Project 3 due
