@@ -60,5 +60,5 @@ Wed 4/17 |  Classification | Demos, Slides| [17](https://www.inferentialthinking
 Fri 4/19 | Classifiers | Demos, Slides | [17.4](https://www.inferentialthinking.com/chapters/17/4/implementing-the-classifier.html)| [Homework 11](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=hw/hw11/hw11.ipynb) (Due Thu 4/25) 
 Mon 4/22 | Classifiers | Demos, Slides|  | 
 Wed 4/24 | Decisions  | Demos, Slides | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | [Practice 09: Regression](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=practice_exercises/practice09/practice09.ipynb)
-Fri 4/26 | Conclusion | Slides | Project 3 due
+Fri 4/26 | Conclusion | Slides |  | Project 3 due
 TBD |  Final Exam |  |  | TBD
