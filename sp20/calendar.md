@@ -12,10 +12,10 @@ Based on Berkeley's popular [Data 8](http://data8.org) course, YData is an intro
 computational and programming skills along with inferential thinking.
 
 
-Calendar Spring 2019
+Calendar Spring 2020
 ---
-Instructors: Jessi Cisewski-Kehe and John Lafferty<br>
-Lecture: MWF 10:30-11:20, [LUCE 101](https://map.yale.edu/place/building/LUCE?)
+Instructors: Jessi Cisewski-Kehe<br>
+Lecture: MWF 10:30-11:20, [TBD]()
 
 
 
