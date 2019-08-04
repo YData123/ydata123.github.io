@@ -14,15 +14,15 @@ computational and programming skills along with inferential thinking.
 
 Calendar Spring 2020
 ---
-Instructors: Jessi Cisewski-Kehe<br>
-Lecture: MWF 10:30-11:20, [TBD]()
+Instructor: Jessi Cisewski-Kehe<br>
+Lecture: MWF 10:30-11:20, [TBD location]()
 
 
 
  Date |  Topic | Lecture | Reading | Assignment
 ----------- | ------------- | ------------ | ------------- | -----------
 Mon 1/14 |      Introduction	| [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture01/lec01.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture01/ydata_lecture_01.pdf) | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html)
-Wed 1/16 |      Cause and Effect | 	[Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture02/ydata_lecture_02.pdf)  | [Chapter 2](https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html) | [Practice 01: Expressions](https://mybinder.org/v2/gh/YData123/sds123/master?filepath=/practice_exercises/practice01/practice01.ipynb)
+Wed 1/16 |      Cause and Effect | 	[Slides] | [Chapter 2](https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html) | [Practice 01: Expressions]
 Fri 1/18 | Tables | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture03/lec03.ipynb) [(Binder verison)](https://mybinder.org/v2/gh/YData123/sds123/master?filepath=/demos/lecture03/lec03.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture03/ydata_lecture_03.pdf) | [Chapter 3](https://www.inferentialthinking.com/chapters/03/programming-in-python.html) | [Homework 01](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=hw/hw01/hw01.ipynb) (Due Thu 1/24)
 Mon 1/21 | No class (MLK day) | — | — | —
 Wed 1/23 | Data Types | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture04/lec04.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture04/ydata_lecture_04.pdf) | [Chapters 4](https://www.inferentialthinking.com/chapters/04/data-types.html), [5](https://www.inferentialthinking.com/chapters/05/sequences.html) | [Practice 02: Types & Sequences](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=practice_exercises/practice02/practice02.ipynb)
@@ -61,4 +61,4 @@ Fri 4/19 | Classifiers | [Demos](http://hub.ydata123.org/user-redirect/interact?
 Mon 4/22 | Classifiers | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture35_postponed/lec35_postponed.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture35_postponed/ydata_lecture_35_postponed.pdf) |  | 
 Wed 4/24 | Decisions  | [Demos](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=demos/lecture36/lec36.ipynb), [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture36/ydata_lecture_36.pdf) | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | [Practice 09: Regression](http://hub.ydata123.org/user-redirect/interact?account=YData123&repo=sds123&branch=master&path=practice_exercises/practice09/practice09.ipynb)
 Fri 4/26 | Conclusion | [Slides](https://github.com/YData123/sds123/raw/master/lectures/lecture37/ydata_lecture_37_review.pdf)  | Project 3 due
-Sun 5/5 |  Final Exam |  |  | Sunday 2pm
+TBD |  Final Exam |  |  | TBD
