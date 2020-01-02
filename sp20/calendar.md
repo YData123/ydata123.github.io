@@ -15,7 +15,7 @@ computational and programming skills along with inferential thinking.
 Calendar Spring 2020
 ---
 Instructor: Jessi Cisewski-Kehe<br>
-Lecture: MWF 10:30-11:20, [TBD location]()
+Lecture: MWF 10:30-11:20, [DL 220](https://map.yale.edu/place/building/DL?)
 
 
 
