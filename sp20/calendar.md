@@ -61,4 +61,4 @@ Fri 4/17 | Classifiers | Demos, Slides | [17.4](https://www.inferentialthinking.
 Mon 4/20 | Classifiers | Demos, Slides|  | 
 Wed 4/22 | Decisions  | Demos, Slides | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | Practice 09: Regression
 Fri 4/24 | Conclusion | Slides |  | Project 3 due
-TBD |  Final Exam |  |  | TBD
+Fri May 1 (2 PM) |  Final Exam |  |  | 
