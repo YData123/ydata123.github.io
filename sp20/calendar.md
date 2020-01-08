@@ -21,7 +21,7 @@ Lecture: MWF 10:30-11:20, [DL 220](https://map.yale.edu/place/building/DL?)
 
  Date |  Topic | Lecture | Reading | Assignment
 ----------- | ------------- | ------------ | ------------- | -----------
-Mon 1/13 |      Introduction	| Demos, Slides | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html)
+Mon 1/13 |      Introduction	| Demos, [Slides](https://github.com/YData123/sds123-sp20/raw/master/lectures/lecture01/ydata_lecture_01.pdf) | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html)
 Wed 1/15 |      Cause and Effect | 	Slides | [Chapter 2](https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html) | Practice 01: Expressions
 Fri 1/17 | Tables | Demos, Slides | [Chapter 3](https://www.inferentialthinking.com/chapters/03/programming-in-python.html) | Homework 01 (Due Thu 1/23)
 Mon 1/20 | No class (MLK day) | — | — | —
