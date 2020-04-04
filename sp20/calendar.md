@@ -59,6 +59,6 @@ Mon 4/13 |  Regression Inference | [Demos](https://hub.ydata123.org/hub/user-red
 Wed 4/15 |  Classification | [Demos](https://hub.ydata123.org/hub/user-redirect/interact?account=YData123&repo=sds123-sp20&branch=master&path=demos/lec34.ipynb), [MyBinder](https://mybinder.org/v2/gh/YData123/sds123-sp20/master?filepath=%2Fdemos%2Flec34.ipynb), [Slides](https://github.com/YData123/sds123-sp20/raw/master/lectures/ydata_lecture_34.pdf)| [17](https://www.inferentialthinking.com/chapters/17/classification.html), [17.1](https://www.inferentialthinking.com/chapters/17/1/nearest-neighbors.html), [17.2](https://www.inferentialthinking.com/chapters/17/2/training-and-testing.html), [17.3](https://www.inferentialthinking.com/chapters/17/3/rows-of-tables.html) | 
 Fri 4/17 | Classifiers | Demos, Slides | [17.4](https://www.inferentialthinking.com/chapters/17/4/implementing-the-classifier.html)| Homework 11 (Due Thu 4/23) 
 Mon 4/20 | Classifiers | Demos, Slides|  | 
-Wed 4/22 | Decisions  | Demos, Slides | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | Practice 09: Regression
+Wed 4/22 | Decisions  | Demos, Slides | [Chapter 18](https://www.inferentialthinking.com/chapters/18/updating-predictions.html) | [Practice 09: Regression](https://hub.ydata123.org/hub/user-redirect/interact?account=YData123&repo=sds123-sp20&branch=master&path=practice_exercises/practice09/practice09.ipynb)
 Fri 4/24 | Conclusion | Slides |  | Project 3 due
 Fri 5/1 (2 PM) |  Final Exam |  |  | 
