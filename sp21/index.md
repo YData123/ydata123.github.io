@@ -1,3 +1,3 @@
 ---
-redirect_to: "http://ydata123.org/sp19/calendar.html"
+redirect_to: "http://ydata123.org/sp21/calendar.html"
 ---
