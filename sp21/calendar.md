@@ -1,4 +1,4 @@
-++<link rel="stylesheet" href="theme/css/main.css" />
+<link rel="stylesheet" href="theme/css/main.css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 ![noisy Y](./noiseY-150.png)
