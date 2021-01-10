@@ -1,10 +1,10 @@
 # Running Jupyter on your computer
 
-If you care to or if the [YData Hub](https://hub.ydata123.org) is not working for you, you can run a Jupyter notebook on your computer. Here are the steps to get up and running:
+Running a Jupyter notebook on your own computer is the recommended way to compute in the course. Here are the steps to get up and running:
 
 ## Setup
 
-- Download and install the [Anaconda Python](https://www.anaconda.com/distribution/#download-section) distribution for your operating system (pick the Python 3.7 version, 64 bits). The full install will take a few minutes.
+- Download and install the [Anaconda Python](https://www.anaconda.com/distribution/#download-section) distribution for your operating system (pick the Python 3.8 version, 64 bits). The full install will take a few minutes.
 
 - Download [the ydata123_env.yml specification file](ydata123_env.yml), which defines the packages and libraries you need to run class exercises and homework.
 
