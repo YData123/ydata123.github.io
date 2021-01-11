@@ -53,4 +53,4 @@ Numpy and Matplotlib, as well as the Berkeley
 Spring 2021
 ---
 
-The calendar for the course, with links to the programming materials, is at [ydata123.org/sp20](http://ydata123.org/sp21/calendar.html)
+The calendar for the course, with links to the programming materials, is at [ydata123.org/sp21](http://ydata123.org/sp21/calendar.html)
