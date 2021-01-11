@@ -4,7 +4,7 @@
 ![noisy Y](./noiseY-150.png)
 
 
-YData: An Introduction to Data Science 
+YData: An Introduction to Data Science
 ====
 
 YData aims to enhance students' knowledge and capabilities in the fundamental ideas and skills of data science.
@@ -12,9 +12,9 @@ Based on Berkeley's popular [Data 8](http://data8.org) course, YData is an intro
 computational and programming skills along with inferential thinking.
 
 The course is designed to be accessible to students with little or no
-background in computing, programming, or statistics. At the same time, 
+background in computing, programming, or statistics. At the same time,
 it is meant to be engaging for more technically oriented students, through the extensive
-use of examples and hands-on data analysis.  
+use of examples and hands-on data analysis.
 
 
 Materials
@@ -50,16 +50,7 @@ notebooks use a Python 3 installation with the standard modules from
 Numpy and Matplotlib, as well as the Berkeley
 [datascience](https://pypi.python.org/pypi/datascience/) module.)
 
-Spring 2020
+Spring 2021
 ---
 
-The calendar for the course, with links to the programming materials, is at [ydata123.org/sp20](http://ydata123.org/sp20/calendar.html)
-
-Spring 2019
----
-
-The course is being offered for the first time at Yale in Spring 2019. Enrollment will be limited, with preference given to undergraduates.
-The calendar for the course, with links to the programming materials, is at [ydata123.org/sp19](http://ydata123.org/sp19/calendar.html)
-
-
-
+The calendar for the course, with links to the programming materials, is at [ydata123.org/sp20](http://ydata123.org/sp21/calendar.html)
