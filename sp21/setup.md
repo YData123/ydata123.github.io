@@ -1,6 +1,6 @@
 # Running Jupyter on your computer
 
-Running a Jupyter notebook on your own computer is the recommended way to compute in the course. Here are the steps to get up and running:
+Running a Jupyter notebook on your own computer is the recommended way to compute in the course. A video tutorial of the installation can be found at: Canvas -> Files -> Setting up python -> Installing Anaconda.MOV. Here are the steps to get up and running:
 
 ## Setup
 
