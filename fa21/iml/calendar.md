@@ -7,7 +7,7 @@
 Introductory Machine Learning
 ====
 
-S&DS 265 introduces some of the key ideas and techniques in machine learning. Basic algorithms and concepts are presented to build intuition for how different methods work, without advanced mathematics. Assignments give students hands-on experience with the methods on different types of data. Topics include linear regression and classification, tree-based methods, topic models, language models, word embeddings, basic two-layer and recurrent neural networks, and an introduction to deep learning. Examples come from a variety of sources including political speeches, archives of scientific articles, real estate listings, and natural images. Programming is central to the course, and is based on the Python programming language and Jupyter notebooks.
+S&DS 265 introduces some of the key ideas and techniques in machine learning. Basic algorithms and concepts are presented to build intuition for how different methods work, without advanced mathematics. Assignments give students hands-on experience with the methods on different types of data. Topics include linear regression and classification, tree-based methods, topic models, language models, word embeddings, basic two-layer and recurrent neural networks, reinforcement learning, and an introduction to deep learning. Examples come from a variety of sources including political speeches, archives of scientific articles, real estate listings, and natural images. Programming is central to the course, and is based on the Python programming language and Jupyter notebooks.
 
 Calendar Fall 2021
 ---
