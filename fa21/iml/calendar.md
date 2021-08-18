@@ -11,8 +11,7 @@ S&DS 265 introduces some of the key ideas and techniques in machine learning. Ba
 
 Calendar Fall 2021
 ---
-Instructor: John Lafferty<br>
-Lectures: Tu/Th 9:00-10:20
+Lectures: Tuesday/Thursday 9:00-10:20
 
 
 
