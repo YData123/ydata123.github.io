@@ -25,7 +25,7 @@ Lectures: Tuesday/Thursday 9:00-10:20
 4 | Sept 21, 23 | Sochastic gradient descent | [SGD example](https://github.com/YData123/sds265-fa21/blob/main/demos/sgd/sgd-example.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/sgd/sgd-example.ipynb) |  | Quiz 1; Assn 1 in; Assn 2 out
 5 | Sept 28, 30 | Bias and Variance, cross-validation | |  |
 6 | Oct 5, 7 | Tree-based methods | [Trees and forests](https://github.com/YData123/sds265-fa21/blob/main/demos/trees/trees-forests-examples.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/trees/trees-forests-examples.ipynb) |  | Assn 2 in; Assn 3 out
-7 | Oct 12, 14 | PCA and dimension reduction | |  | Quiz 2; Assn 3 in; Assn 4 out
+7 | Oct 12, 14 | PCA and dimension reduction | [PCA examples](https://github.com/YData123/sds265-fa21/blob/main/demos/pca/pca-demo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/pca/pca-demo.ipynb) |  | Quiz 2; Assn 3 in; Assn 4 out
 8 | Oct 19, 21 | Mixtures and Bayes | |  | Midterm exam
 9 | Oct 26, 28 | Language models, word embeddings | |  |
 10 | Nov 2, 4 | Topic models | |  |  Assn 4 in; Assn 5 out
