@@ -26,7 +26,7 @@ Lectures: Tuesday/Thursday 9:00-10:20
 5 | Sept 28, 30 | Bias and Variance, cross-validation | |  |
 6 | Oct 5, 7 | Tree-based methods | [Trees and forests](https://github.com/YData123/sds265-fa21/blob/main/demos/trees/trees-forests-examples.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/trees/trees-forests-examples.ipynb) |  | Assn 2 in; Assn 3 out
 7 | Oct 12, 14 | PCA and dimension reduction | [PCA examples](https://github.com/YData123/sds265-fa21/blob/main/demos/pca/pca-demo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/pca/pca-demo.ipynb) |  | Quiz 2; Assn 3 in; Assn 4 out
-8 | Oct 19, 21 | Mixtures and Bayes | [Bayes demo](https://github.com/YData123/sds265-fa21/blob/main/demos/bayes/bayes-demo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/bayesa/bayes-demo.ipynb) |  | Midterm exam
+8 | Oct 19, 21 | Mixtures and Bayes | [Bayesian inference demo](https://github.com/YData123/sds265-fa21/blob/main/demos/bayes/bayes-demo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/bayes/bayes-demo.ipynb) |  | Midterm exam
 9 | Oct 26, 28 | Language models, word embeddings | |  |
 10 | Nov 2, 4 | Topic models | |  |  Assn 4 in; Assn 5 out
 11 | Nov 9, 11 | Introduction to neural networks | |  |  Quiz 3; Assn 4 in; Assn 6 out
