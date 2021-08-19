@@ -28,7 +28,7 @@ Lectures: Tuesday/Thursday 9:00-10:20
 7 | Oct 12, 14 | PCA and dimension reduction | [PCA examples](https://github.com/YData123/sds265-fa21/blob/main/demos/pca/pca-demo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/pca/pca-demo.ipynb) |  | Quiz 2; Assn 3 in; Assn 4 out
 8 | Oct 19, 21 | Mixtures and Bayes | [Bayesian inference demo](https://github.com/YData123/sds265-fa21/blob/main/demos/bayes/bayes-demo.ipynb) <!--[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/bayes/bayes-demo.ipynb)--> |  | Midterm exam
 9 | Oct 26, 28 | Language models, word embeddings | [Word embeddings](https://github.com/YData123/sds265-fa21/blob/main/demos/embeddings/embeddings.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/embeddings/embeddings.ipynb)|  |
-10 | Nov 2, 4 | Topic models | |  |  Assn 4 in; Assn 5 out
+10 | Nov 2, 4 | Topic models | [Topic models](https://github.com/YData123/sds265-fa21/blob/main/demos/topic-models/topic_models.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/topic-models/topic_models.ipynb) |  |  Assn 4 in; Assn 5 out
 11 | Nov 9, 11 | Introduction to neural networks | |  |  Quiz 3; Assn 4 in; Assn 6 out
 12 | Nov 16, 18 | Deep neural networks | |  |  Quiz 3; Assn 4 in; Assn 6 out
 13 | Nov 19-28 | No class, Thanksgiving break | |  |  
