@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="theme/css/main.css" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 <head>
- <title> Introductory Machine Learning </title>
+  <title> Introductory Machine Learning </title>
+  <link rel="stylesheet" href="theme/css/main.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 </head>
 
 ![neuro-datascience](./data-neuroscience.jpg)
