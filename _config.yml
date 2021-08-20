@@ -2,7 +2,7 @@
 name: iML
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: 
+description: This is a test
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
 url: http://ydata123.org/
@@ -10,5 +10,3 @@ url: http://ydata123.org/
 # favicon
 favicon: favicon.ico
 
-gems:
-  - jekyll-redirect-from
