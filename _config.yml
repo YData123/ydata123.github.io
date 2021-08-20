@@ -1,12 +1,15 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: iML
+name: YData
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: This is a test
+description: An Introduction to Data Science
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
 url: http://ydata123.org/
 
 # favicon
 favicon: favicon.ico
+
+gems:
+  - jekyll-redirect-from
 
