@@ -38,4 +38,4 @@ Lectures: Tuesday/Thursday 9:00-10:20
 14 | Nov 30, Dec 2 | Reinforcement learning | <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()--> |   Assn 6 in; Assn 7 out |
 15 | Dec 7, 9 | Societal issues for machine learning | <!--[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()--> |   Quiz 4; Assn 7 in |
 
-8/20
+
