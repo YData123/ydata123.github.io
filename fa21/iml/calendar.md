@@ -14,8 +14,6 @@ S&DS 265 introduces some of the key ideas and techniques in machine learning. Ba
 
 Computing for the course uses Python in Jupyter notebooks. These can be run using [Anaconda](https://www.anaconda.com/products/individual) with the [iML environment](https://raw.githubusercontent.com/YData123/sds265-fa21/main/env/iml_env.yml) adopted by the course; instructions for installing this environment are available on [Yale Canvas](https://canvas.yale.edu).  Alternatively, the notebooks can be run in [Google Colab](https://colab.research.google.com).
 
-<a href="https://raw.githubusercontent.com/YData123/sds265-fa21/main/env/iml_env.yml" download>Download</a>
-
 Calendar Fall 2021
 ---
 Lectures: Tuesday/Thursday 9:00-10:20
