@@ -21,16 +21,10 @@ Calendar Fall 2021
 Lectures: Tuesday/Thursday 9:00-10:20
 
 
-<style>
-   r { color: Red }
-   o { color: Orange }
-   g { color: Green }
-</style>
-
  Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
 1 | Sept 2 |     Course overview | [Slides](https://github.com/YData123/sds265-fa21/raw/main/lectures/lecture-sept-02.pdf) |
-2 | Sept 7, 9 |    Python and background concepts |  [Python elements](https://github.com/YData123/sds265-fa21/raw/main/demos/python/python-elements.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/python/python-elements.ipynb) <br> [Slides](https://github.com/YData123/sds265-fa21/raw/main/lectures/lecture-sept-07.pdf) | Thu: Quiz 0 | [Data8 Chapters 3](https://www.inferentialthinking.com/chapters/03/programming-in-python.html), [4](https://www.inferentialthinking.com/chapters/04/Data_Types.html), [5](https://www.inferentialthinking.com/chapters/05/Sequences.html)
+2 | Sept 7, 9 |    Python and background concepts |  [Python elements](https://github.com/YData123/sds265-fa21/raw/main/demos/python/python-elements.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/python/python-elements.ipynb) <br> [Slides (Tue)](https://github.com/YData123/sds265-fa21/raw/main/lectures/lecture-sept-07.pdf) <br> [Covid trends](https://github.com/YData123/sds265-fa21/raw/main/demos/covid-trends/covid-trends.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/covid-trends/covid-trends.ipynb) <br> [Slides (Thu)](https://github.com/YData123/sds265-fa21/raw/main/lectures/lecture-sept-09.pdf) <br>  | Thu: Quiz 0 | [Data8 Chapters 3](https://www.inferentialthinking.com/chapters/03/programming-in-python.html), [4](https://www.inferentialthinking.com/chapters/04/Data_Types.html), [5](https://www.inferentialthinking.com/chapters/05/Sequences.html)
 3 | Sept 14, 16 | Linear regression and classification | [Classification examples](https://github.com/YData123/sds265-fa21/raw/main/demos/classification/classification.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/classification/classification.ipynb) |  Tue: Assn 1 out |
 4 | Sept 21, 23 | Stochastic gradient descent | [SGD examples](https://github.com/YData123/sds265-fa21/raw/main/demos/sgd/sgd.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/sgd/sgd.ipynb) |  Tue: Quiz 1 <br> Thu: Assn 1 in; Assn 2 out |
 5 | Sept 28, 30 | Bias and variance, cross-validation | [Bias-variance tradeoff](https://github.com/YData123/sds265-fa21/raw/main/demos/bias-variance/bias-variance.zip) <br> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/bias-variance/bias-variance.ipynb) |  |
