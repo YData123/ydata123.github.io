@@ -38,4 +38,4 @@ Lectures: Tuesday/Thursday 9:00-10:20
 13 | Nov 19-28 | No class, Thanksgiving break | <!--[<img width="25" src="colab.svg">]()--> |  |
 14 | Nov 30, Dec 2 | Reinforcement learning | [<img width="25" src="colab.svg">](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/reinforcement-learning/reinforcement-learning.ipynb) [Reinforcement learning](https://github.com/YData123/sds265-fa21/raw/main/demos/reinforcement-learning/reinforcement-learning.zip) |   Tue: Assn 6 in; Assn 7 out | Nov 30: [Reinforcement learning](https://github.com/YData123/sds265-fa21/raw/main/lectures/lecture-nov-30.pdf)
 15 | Dec 7, 9 | Societal issues for machine learning | <!--[<img width="25" src="colab.svg">]()--> |   Tue: Quiz 4 <br> Thu: Assn 7 in |
- | Dec 21 at 7pm <br> YSB Marsh | Final exam | | | [Registrar: Final exam schedule](https://registrar.yale.edu/general-information/final-exams/)
+ | Dec 21  | Final exam 7pm in YSB Marsh| | | [Registrar: Final exam schedule](https://registrar.yale.edu/general-information/final-exams/)
