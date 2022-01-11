@@ -18,6 +18,8 @@ Calendar Spring 2022
 ---
 Lectures: Monday/Wednesday 11:30-12:50
 
+<div class="classMap">
+
 Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
 1 | Jan 26, 28 |    Course overview |   |
@@ -36,5 +38,4 @@ Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
    | May 7  | Final exam, 2pm location TBD | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
 
 
-<div class="classMap">
 </div>
