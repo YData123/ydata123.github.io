@@ -9,7 +9,6 @@
 Intermediate Machine Learning
 ===============================
 
-<div class="classMap">
 
 S&DS 365 is a second course in machine learning at the advanced undergraduate or beginning graduate level.
 The course assumes familiarity with the basic ideas and techniques in machine learning, for example as
@@ -39,4 +38,5 @@ Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
    | May 7  | Final exam, 2pm location TBD | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
 
 
+<div class="classMap">
 </div>
