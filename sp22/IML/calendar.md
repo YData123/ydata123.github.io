@@ -21,28 +21,11 @@ Lectures: Monday/Wednesday 11:30-12:50
 
 
 <div class="classMap">
-<style>
-.classMap {
-    width: 80%;
-    text-align: left;
-}
-.classMap th {
-background: white;
-word-wrap: break-word;
-text-align: left;
-}
-.classMap tr:nth-child(-n) { background: rgba(0, 0, 0, .00); }
-.classMap tr:nth-child(n+2) { background: rgba(255, 99, 71, .05); }
-.classMap tr:nth-child(n+5) { background: rgba(99, 255, 71, .05); }
-.classMap tr:nth-child(n+9) { background: rgba(99, 71, 255, .05); }
-.classMap tr:nth-child(n+11) { background: rgba(10, 150, 150, .05); }
-.classMap tr:nth-child(n+13) { background: rgba(0, 0, 0, .00); }
-</style>
 
 Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
-1 | Jan 26, 28 |    Course overvieu |   |
-2 | Jan 31, Feb 2 | Smoothing and kernels |  |  |
+1 | Jan 26, 28 |    Course overview |   |
+2 | Jan 31, Feb 2 | Smoothing and kernelz |  |  |
 3 | Feb 7, 9 | Neural networks for classification |  |  Feb 9: Assn 1 out |
 4 | Feb 14, 16 | Risk bounds and generalization error |  | Feb 16: Quiz 1 |
 5 | Feb 21, 23 | Nonparametric Bayes |  |  Feb 23: Assn 1 in; Assn 2 out|
