@@ -1,6 +1,6 @@
 <head>
   <title> Intermediate Machine Learning </title>
-  <link rel="stylesheet" href="./theme/css/main.css" />
+  <link rel="stylesheet" href="theme/css/main.css" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 </head>
 
@@ -20,12 +20,10 @@ Calendar Spring 2022
 Lectures: Monday/Wednesday 11:30-12:50
 
 
-<div class="classMap">
-
 Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
 1 | Jan 26, 28 |    Course overview |   |
-2 | Jan 31, Feb 2 | Smoothing and kernelz |  |  |
+2 | Jan 31, Feb 2 | Smoothing and kernels |  |  |
 3 | Feb 7, 9 | Neural networks for classification |  |  Feb 9: Assn 1 out |
 4 | Feb 14, 16 | Risk bounds and generalization error |  | Feb 16: Quiz 1 |
 5 | Feb 21, 23 | Nonparametric Bayes |  |  Feb 23: Assn 1 in; Assn 2 out|
@@ -40,4 +38,5 @@ Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
    | May 7  | Final exam, 2pm location TBD | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
 
 
+<div class="classMap">
 </div>
