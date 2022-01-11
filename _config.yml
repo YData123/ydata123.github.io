@@ -1,8 +1,8 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: iML
+name: IML
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: 
+description:
 
 # The URL of your actual domain. This will be used to make absolute links in the RSS feed.
 url: http://ydata123.org/
@@ -12,4 +12,3 @@ favicon: favicon.ico
 
 gems:
   - jekyll-redirect-from
-
