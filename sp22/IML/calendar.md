@@ -41,7 +41,7 @@ text-align: left;
 
 Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
-1 | Jan 26, 28 |    Course overview |   |
+1 | Jan 26, 28 |    Course overvieu |   |
 2 | Jan 31, Feb 2 | Smoothing and kernels |  |  |
 3 | Feb 7, 9 | Neural networks for classification |  |  Feb 9: Assn 1 out |
 4 | Feb 14, 16 | Risk bounds and generalization error |  | Feb 16: Quiz 1 |
