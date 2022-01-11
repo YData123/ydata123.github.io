@@ -6,24 +6,6 @@
 
 <img src="./heatmap2.png" width="300" align="bottom">
 
-<style>
-.classMap {
-    width: 80%;
-    text-align: left;
-}
-.classMap th {
-background: white;
-word-wrap: break-word;
-text-align: left;
-}
-.classMap tr:nth-child(-n) { background: rgba(0, 0, 0, .00); }
-.classMap tr:nth-child(n+2) { background: rgba(255, 99, 71, .05); }
-.classMap tr:nth-child(n+5) { background: rgba(99, 255, 71, .05); }
-.classMap tr:nth-child(n+9) { background: rgba(99, 71, 255, .05); }
-.classMap tr:nth-child(n+11) { background: rgba(10, 150, 150, .05); }
-.classMap tr:nth-child(n+13) { background: rgba(0, 0, 0, .00); }
-</style>
-
 Intermediate Machine Learning
 ===============================
 
