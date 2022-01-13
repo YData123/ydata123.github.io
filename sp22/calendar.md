@@ -19,7 +19,7 @@ Lecture: MWF 10:30-11:20
 
 Note: This class schedule is provisional and will be updated as the course progresses.
 
- Date |  Topic | Lecture | Reading | Assignment
+ Date   |  Topic | Lecture | Reading | Assignment
 ----------- | ------------- | ------------ | ------------- | -----------
 Wed 1/26 |      Introduction	| <!-- [demos/lec01](https://github.com/YData123/sds123-sp21/raw/main/demos/lec01.zip), [MyBinder](https://mybinder.org/v2/gh/YData123/sds123-sp21/main?filepath=%2Fdemos%2Flec01/%2Flec01.ipynb), [slides](https://github.com/YData123/sds123-sp21/raw/main/lectures/ydata_lecture_01.pdf) --> | [Chapter 1.1](https://www.inferentialthinking.com/chapters/01/1/intro.html), [1.2](https://www.inferentialthinking.com/chapters/01/2/why-data-science.html), [1.3](https://www.inferentialthinking.com/chapters/01/3/Plotting_the_Classics.html) | Assignment 00  |
 Fri 1/28 |      Cause and Effect | <!--	[slides](https://github.com/YData123/sds123-sp21/raw/main/lectures/ydata_lecture_02.pdf) --> | <!-- [Chapter 2](https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html) --> | <!--[Practice 01: Expressions](https://github.com/YData123/sds123-sp21/raw/main/practice_exercises/practice01.zip) -->
