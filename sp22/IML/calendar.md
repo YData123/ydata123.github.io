@@ -29,7 +29,7 @@ Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
 5 | Feb 21, 23 | Nonparametric Bayes |  |  Feb 23: Assn 1 in; Assn 2 out|
 6 | Feb 28, Mar 2 | Approximate inference |  | Mar 2: Quiz 2 |
 7 | Mar 7, 9 | Approaches to generative modeling |  | Mar 9: Assn 2 in |
-8 | Mar 14, 16 |  Optimization methods  |  | Mar 16: Midterm exam |
+8 | Mar 14, 16 |  Structure learning  |  | Mar 16: Midterm exam |
 9 | Mar 28, 30 | Deep reinforcement learning | | Mar 30: Assn 3 out |
 10 | Apr 4, 6 | Policy gradient methods |  |  Apr 6: Quiz 3 |
 11 | Apr 11, 13 | Sequential and sequence-to-sequence  models |  | Apr 13: Assn 3 in; Assn 4 out|
