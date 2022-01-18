@@ -1,3 +1,3 @@
 ---
-redirect_to: "http://ydata123.org/sp22/IML/calendar.html"
+redirect_to: "http://ydata123.org/sp22/interml/calendar.html"
 ---
