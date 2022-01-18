@@ -4,7 +4,7 @@ Running a Jupyter notebook on your own computer is the recommended way to comput
 
 ## Setup
 
-- Download and install the [Anaconda Python](https://www.anaconda.com/distribution/#download-section) distribution for your operating system (pick the Python 3.8 version, 64 bits). The full install will take a few minutes.
+- Download and install the [Anaconda Python](https://www.anaconda.com/distribution/#download-section) distribution for your operating system (pick the Python 3.9 version, 64 bits). The full install will take a few minutes.
 
 - Download [the ydata123_env.yml specification file](ydata123_env.yml), which defines the packages and libraries you need to run class exercises and homework.
 
@@ -18,4 +18,4 @@ Running a Jupyter notebook on your own computer is the recommended way to comput
 
 - From the home tab in Anaconda Navigator, click the launch button under Jupyter notebook. This should open a Jupyter session in your default browser.
 
-- Download and extract the current version of the class materials from [https://github.com/YData123/sds123-sp21](https://github.com/YData123/sds123-sp21). Navigate to this folder on your computer in the Jupyter file browser, then click the notebook file you want to run.
+- Download and extract the current version of the class materials from [https://github.com/YData123/sds123-sp21](https://github.com/YData123/sds123-sp22). Navigate to this folder on your computer in the Jupyter file browser, then click the notebook file you want to run.
