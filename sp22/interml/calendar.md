@@ -15,27 +15,31 @@ S&DS 365 is a second course in machine learning at the advanced undergraduate or
 
 As prerequisites, students are expected to have a background in probability and statistics, at the level of S&DS 242 (Theory of Statistics), familiarity with the core ideas from linear algebra, for example through Math 222 (Linear Algebra with Applications), and computational skills at the level of S&DS 265 (Introductory Machine Learning) or CPSC 200 (Introduction to Information Systems).
 
+
+Computing for the course uses Python in Jupyter notebooks. These can be run using [Anaconda](https://www.anaconda.com/products/individual) with the [iML environment](https://raw.githubusercontent.com/YData123/sds265-fa21/main/env/iml_env.yml) adopted by the Introductory Machine Learning course <a href="https://raw.githubusercontent.com/YData123/sds265-fa21/main/env/iml_env.zip" download>(click here to download)</a>
+; instructions for installing this environment are available on [Yale Canvas](https://canvas.yale.edu).  The notebooks can also be run in [Google Colab](https://colab.research.google.com) by clicking on the [<img width="25" src="colab.svg">](https://colab.research.google.com) icon.
+
 Calendar Spring 2022
 ---
 Lectures: Monday/Wednesday 11:30-12:50
 
 
-Week | Dates |  Topics | Lecture Materials | Assignments & Exams | Readings
+Week | Dates |  Topics | Demos & Tutorials |  Slides & Readings | Assignments & Exams
 ----------- | ----------- | ------------- | ------------ | ------------- | -----------
-1 | Jan 26, 28 |    Course overview |   |
+1 | Jan 26, 28 |    Course overview |  [<img width="25" src="colab.svg">](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/python/python-elements.ipynb) [Python elements](https://github.com/YData123/sds265-fa21/raw/main/demos/python/python-elements.zip)  <br>  [<img width="25" src="colab.svg">](https://colab.research.google.com/github/YData123/sds265-fa21/blob/master/demos/covid-trends/covid-trends.ipynb) [Pandas and regression](https://github.com/YData123/sds265-fa21/raw/main/demos/covid-trends/covid-trends.zip) <br> [<img width="25" src="colab.svg">](https://colab.research.google.com/github/YData123/sds365-sp22/blob/master/demos/lasso/lasso-example.ipynb) [Lasso example](https://github.com/YData123/sds365-sp22/raw/main/demos/lasso/lasso-example.zip)  | Jan 26: [Course overview](https://github.com/YData123/sds365-sp22/raw/main/lectures/lecture-jan-26.pdf) <br> Jan 28: [Sparse regression](https://github.com/YData123/sds365-sp22/raw/main/lectures/lecture-jan-28.pdf) |
 2 | Jan 31, Feb 2 | Smoothing and kernels |  |  |
-3 | Feb 7, 9 | Neural networks for classification |  |  Feb 9: Assn 1 out |
-4 | Feb 14, 16 | Risk bounds and generalization error |  | Feb 16: Quiz 1 |
-5 | Feb 21, 23 | Nonparametric Bayes |  |  Feb 23: Assn 1 in; Assn 2 out|
-6 | Feb 28, Mar 2 | Approximate inference |  | Mar 2: Quiz 2 |
-7 | Mar 7, 9 | Approaches to generative modeling |  | Mar 9: Assn 2 in |
-8 | Mar 14, 16 |  Structure learning  |  | Mar 16: Midterm exam |
-9 | Mar 28, 30 | Deep reinforcement learning | | Mar 30: Assn 3 out |
-10 | Apr 4, 6 | Policy gradient methods |  |  Apr 6: Quiz 3 |
-11 | Apr 11, 13 | Sequential and sequence-to-sequence  models |  | Apr 13: Assn 3 in; Assn 4 out|
-12 | Apr 18, 20 | Attention and language models |  | Apr 20: Quiz 4 |
-13 | Apr 25, 27 | Special topic: Machine learning in neuroscience |  |  Apr 27: Assn 4 in|
-   | May 7  | Final exam, 2pm location TBD | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
+3 | Feb 7, 9 | Neural networks for classification |  |  | Feb 9: Assn 1 out
+4 | Feb 14, 16 | Risk bounds and generalization error |  | | Feb 16: Quiz 1
+5 | Feb 21, 23 | Nonparametric Bayes |  |  | Feb 23: Assn 1 in; Assn 2 out
+6 | Feb 28, Mar 2 | Approximate inference |  |  | Mar 2: Quiz 2
+7 | Mar 7, 9 | Approaches to generative modeling |  |  | Mar 9: Assn 2 in
+8 | Mar 14, 16 |  Structure learning  |  |  | Mar 16: Midterm exam
+9 | Mar 28, 30 | Deep reinforcement learning | | | Mar 30: Assn 3 out
+10 | Apr 4, 6 | Policy gradient methods |  |  | Apr 6: Quiz 3
+11 | Apr 11, 13 | Sequential and sequence-to-sequence  models |  | | Apr 13: Assn 3 in; Assn 4 out
+12 | Apr 18, 20 | Attention and language models |  | | Apr 20: Quiz 4
+13 | Apr 25, 27 | Special topic: Machine learning in neuroscience |  |  | Apr 27: Assn 4 in
+   | May 7  | Final exam, 2pm location TBD | | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
 
 
 <div class="classMap">
