@@ -50,7 +50,7 @@ notebooks use a Python 3 installation with the standard modules from
 Numpy and Matplotlib, as well as the Berkeley
 [datascience](https://pypi.python.org/pypi/datascience/) module.)
 
-Spring 2021
+Spring 2022
 ---
 
-The calendar for the course, with links to the programming materials, is at [ydata123.org/sp21](http://ydata123.org/sp21/calendar.html)
+The calendar for the course, with links to the programming materials, is at [ydata123.org/sp22](http://ydata123.org/sp22/calendar.html)
