@@ -41,7 +41,7 @@ Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes 
 10 | Apr 4, 6 | Policy gradient methods |  |  | | Apr 6: Quiz 3
 11 | Apr 11, 13 | Sequential and sequence-to-sequence  models |  | | | Apr 13: Assn 3 in; Assn 4 out
 12 | Apr 18, 20 | Attention and language models |  | | | Apr 20: Quiz 4
-13 | Apr 25, 27 | Special topic: Machine learning in neuroscience |  |  | | Apr 27: Assn 4 in
+13 | Apr 25, 27 | Special topics and review |  |  | | Apr 27: Assn 4 in
    | May 7  | Final exam, 2pm location TBD | | | | [Registrar: final exam schedule](http://catalog.yale.edu/ycps/final-examination-schedules/)
 
 
