@@ -62,7 +62,7 @@ Wed 4/20 |  Classification | <[demos/lec34](https://github.com/YData123/sds123-s
 Fri 4/22 | Classifiers | [demos/lec35](https://github.com/YData123/sds123-sp22/raw/main/demos/lec35.zip), [slides](https://github.com/YData123/sds123-sp22/raw/main/lectures/ydata_slides_35.pdf) | [Chapter 17.4](https://www.inferentialthinking.com/chapters/17/4/Implementing_the_Classifier.html) | |
 Mon 4/25 | Classification continued | [demos/lec36](https://github.com/YData123/sds123-sp22/raw/main/demos/lec36.zip), [slides](https://github.com/YData123/sds123-sp22/raw/main/lectures/ydata_slides_36.pdf) | [Chapter 17.6](https://www.inferentialthinking.com/chapters/17/6/Multiple_Regression.html) | | [Assignment 11: due 5/1](https://github.com/YData123/sds123-sp22/raw/main/hw/hw11.zip)
 Wed 4/27 | Multiple Regression  | [demos/lec37](https://github.com/YData123/sds123-sp22/raw/main/demos/lec37.zip), [slides](https://github.com/YData123/sds123-sp22/raw/main/lectures/ydata_slides_37.pdf) | [Chapter 18](https://www.inferentialthinking.com/chapters/18/Updating_Predictions.html) | |
-Fri 4/29 | pandas  | <!--	[demos/lec38](https://github.com/YData123/sds123-sp22/raw/main/demos/lec38.zip), [MyBinder](https://mybinder.org/v2/gh/YData123/sds123-sp22/main?filepath=%2Fdemos%2Flec38%2Flec38.ipynb) --> | <!--  --> | <!-- Assignment 11 due 5/6 --> |
+Fri 4/29 | pandas  | [demos/lec38](https://github.com/YData123/sds123-sp22/raw/main/demos/lec38.zip), [slides](https://github.com/YData123/sds123-sp22/raw/main/lectures/ydata_slides_38.pdf) | <!--  --> | <!-- Assignment 11 due 5/6 --> |
 Mon 5/9 | Final exam  | 2pm  | <!--  --> | <!-- Assignment 11 due 5/6 --> |
 
 
