@@ -17,10 +17,12 @@ Computing for the course uses Python in Jupyter notebooks. These can be run usin
 ; instructions for installing this environment are available on [Yale Canvas](https://canvas.yale.edu).  The notebooks can also be run in [Google Colab](https://colab.research.google.com) by clicking on the [<img width="25" src="colab.svg">](https://colab.research.google.com) icon.
 
 
-
+<br>
 Calendar Fall 2022
 ---
-Lectures: Tuesday/Thursday 9:00-10:20
+Lectures: Tuesday/Thursday 9:00-10:15
+<br>
+Davies Auditorium
 
 
  Week | Dates |  Topics | Demos & Tutorials | Lecture Slides | Readings and Notes | Assignments & Exams 
