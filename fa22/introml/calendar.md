@@ -18,11 +18,12 @@ Computing for the course uses Python in Jupyter notebooks. These can be run usin
 
 
 <br>
+
 Calendar Fall 2022
 ---
-Lectures: Tuesday/Thursday 9:00-10:15
+Lectures: Tuesday/Thursday 9:00-10:15am
 <br>
-Davies Auditorium
+[Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)
 
 
  Week | Dates |  Topics | Demos & Tutorials | Lecture Slides | Readings and Notes | Assignments & Exams 
