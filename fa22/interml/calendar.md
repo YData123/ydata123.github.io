@@ -25,7 +25,9 @@ Complementary readings refer to sections in the book [Probabilistic Machine Lear
 
 Calendar Fall 2022
 ---
-Lectures: Monday/Wednesday 9:00-10:20
+Lectures: Monday/Wednesday 9:00-10:15am
+<br>
+[SSS 114](https://map.yale.edu/?id=1910#!m/563689?ct/52707)
 
 
 Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes | Assignments & Exams
