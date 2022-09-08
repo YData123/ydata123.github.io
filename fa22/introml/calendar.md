@@ -26,7 +26,7 @@ Lectures: Tuesday/Thursday 9:00-10:15am
 [Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)
 
 
-#### <span style="color:red">Davies auditorium is not available after Tuesday's flooding. Class on Thursday, September 8, will be in SSS 114.</span>
+<!-- #### <span style="color:red">Davies auditorium is not available after Tuesday's flooding. Class on Thursday, September 8, will be in SSS 114.</span> -->
 
 
  Week | Dates |  Topics | Demos & Tutorials | Lecture Slides | Readings and Notes | Assignments & Exams 
