@@ -26,6 +26,7 @@ Lectures: Tuesday/Thursday 9:00-10:15am
 [Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)
 
 Complementary readings marked ISL refer to sections in the book [An Introduction to Statistical Learning](https://www.statlearning.com/) (second edition). This text uses the R language, but the treatment of concepts is at an appropriate level for iML.
+<br>
 
 
 <!-- #### <span style="color:red">Davies auditorium is not available after Tuesday's flooding. Class on Thursday, September 8, will be in SSS 114.</span> -->
