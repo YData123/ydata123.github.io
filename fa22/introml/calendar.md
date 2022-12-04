@@ -29,7 +29,7 @@ Complementary readings marked ISL refer to sections in the book [An Introduction
 <br>
 
 
-<span style="color:red">Sunday, December 4: Canvas is currently down, across courses. </span> 
+<!--<span style="color:red">Sunday, December 4: Canvas is currently down, across courses. </span> -->
 
 
  Week | Dates |  Topics | Demos & Tutorials | Lecture Slides | Readings and Notes | Assignments & Exams 
