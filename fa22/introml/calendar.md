@@ -29,7 +29,7 @@ Complementary readings marked ISL refer to sections in the book [An Introduction
 <br>
 
 
-<!-- #### <span style="color:red">Davies auditorium is not available after Tuesday's flooding. Class on Thursday, September 8, will be in SSS 114.</span> -->
+<span style="color:red">Sunday, December 4: Canvas is currently down, across courses. </span> 
 
 
  Week | Dates |  Topics | Demos & Tutorials | Lecture Slides | Readings and Notes | Assignments & Exams 
