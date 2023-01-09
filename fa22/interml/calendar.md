@@ -7,6 +7,7 @@
 
 <img src="./heatmap2.png" width="300" align="bottom">
 
+
 Intermediate Machine Learning
 ===============================
 
