@@ -25,7 +25,7 @@ Lectures: Tuesday/Thursday 11:35-12:50pm
 <br>
 [Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)
 
-Complementary readings marked ISL refer to sections in the book [An Introduction to Statistical Learning](https://www.statlearning.com/) (second edition). This text uses the R language, but the treatment of concepts is at an appropriate level for iML. All assignments and quizzes will be posted and due on Thursday in a given week.
+Complementary readings marked ISL refer to sections in the book [An Introduction to Statistical Learning](https://www.statlearning.com/) (second edition). This text uses the R language, but the treatment of concepts is at an appropriate level for iML. Assignments and quizzes are posted and due on Thursday in a given week.
 <br>
 
 
