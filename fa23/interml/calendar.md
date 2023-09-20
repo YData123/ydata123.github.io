@@ -20,7 +20,9 @@ As prerequisites, students are expected to have a background in probability and 
 Computing for the course uses Python in Jupyter notebooks. These can be run using [Anaconda](https://www.anaconda.com/products/individual) with the [IML environment](https://raw.githubusercontent.com/YData123/sds365-fa22/main/env/IML_env.yml) that includes the packages needed <a href="https://raw.githubusercontent.com/YData123/sds365-fa22/main/env/IML_env.zip" download>(click here to download)</a>
 ; instructions for installing this environment are available on [Yale Canvas](https://canvas.yale.edu).  The notebooks can also be run in [Google Colab](https://colab.research.google.com) by clicking on the [<img width="25" src="colab.svg">](https://colab.research.google.com) icon.
 
-Complementary readings refer to sections in the book [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html), by Kevin Murphy, MIT Press, 2022. Assignments and quizzes are posted and due on Wednesday in a given week.
+Complementary readings refer to sections in the book [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html), by Kevin Murphy, MIT Press, 2022. Part I "Foundations" gives a good treatment of background in probability, statistics, and linear algebra that is useful for this course. (But this part of the book also covers much more than we need.)
+
+Assignments and quizzes are posted and due on Wednesday in a given week.
 
 <br>
 
