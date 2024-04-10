@@ -5,7 +5,7 @@
 </head>
 
 
-<img src="./dalle3.png" width="325" align="bottom">
+<img src="./dalle3.png" width="300" align="bottom">
 
 
 Introductory Machine Learning
