@@ -6,6 +6,11 @@
 
 
 <img src="./dalle3.png" width="300" align="bottom">
+<!--
+DALL-E's description of its work: 
+A black and white 2-dimensional Cubist drawing that abstractly portrays a computer and a brain. T
+It blends technological and intellectual elements in a striking monochromatic composition.
+-->
 
 
 Introductory Machine Learning
