@@ -5,7 +5,7 @@
 </head>
 
 
-<img src="./dalle-rube-brain.png" width="300" align="bottom">
+<img src="./dog-car-bike-labeled.png" width="300" align="bottom">
 
 <!--
 DALL-E's description of its work: 
