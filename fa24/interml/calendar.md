@@ -5,8 +5,15 @@
 </head>
 
 
-<img src="./dog-car-bike-labeled.png" width="350" align="bottom">
-
+<img src="./dalle-rube-brain.png" width="300" align="bottom">
+<!--
+DALL-E's description of its work: 
+A black and white image of a Rube Goldberg machine, 
+intricately designed to take on the form of a human brain. 
+The mechanical elements are arranged to emulate 
+the brain's hemispheres and neural pathways.
+-->
+<br>
 
 Intermediate Machine Learning
 ===============================
