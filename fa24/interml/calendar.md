@@ -6,6 +6,7 @@
 
 
 <img src="./dalle-rube-brain.png" width="300" align="bottom">
+
 <!--
 DALL-E's description of its work: 
 A black and white image of a Rube Goldberg machine, 
