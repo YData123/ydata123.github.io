@@ -38,7 +38,7 @@ Calendar Fall 2024
 ---
 Lectures: Monday/Wednesday 1:00-2:15pm
 <br>
-[William L. Harkness Hall (WLH) Room 201](https://map.yale.edu/?id=1910#!m/560127?s)
+[WLH 201 - William L. Harkness Hall 201](https://map.yale.edu/?id=1910#!m/560127?s)
 
 Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes | Assignments & Exams
 ----------- | ----------- | ------------- | ------------ | ------------- | ------------- | -----------
