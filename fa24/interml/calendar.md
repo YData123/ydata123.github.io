@@ -36,9 +36,9 @@ Assignments and quizzes are posted and due on Wednesday in a given week.
 
 Calendar Fall 2024
 ---
-<!--Lectures: Monday/Wednesday 1:00-2:15pm
+Lectures: Monday/Wednesday 1:00-2:15pm
 <br>
-[Luce Hall 101](https://map.yale.edu/?id=1910#!m/559960?s)-->
+[William L. Harkness Hall (WLH) Room 201](https://map.yale.edu/?id=1910#!m/560127?s)
 
 Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes | Assignments & Exams
 ----------- | ----------- | ------------- | ------------ | ------------- | ------------- | -----------
