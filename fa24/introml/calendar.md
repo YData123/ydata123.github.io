@@ -26,9 +26,9 @@ Computing for the course uses Python in Jupyter notebooks. These can be run usin
 
 Calendar Fall 2024
 ---
-<!-- Lectures: Tuesday/Thursday 11:35-12:50pm
+Lectures: Tuesday/Thursday 11:35-12:50pm
 <br>
-[Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)-->
+[Davies Auditorium](https://map.yale.edu/?id=1910#!m/563685?ct/52707)
 
 Complementary readings marked ISL refer to sections in the book [An Introduction to Statistical Learning](https://hastie.su.domains/ISLP/ISLP_website.pdf) (Python version, July 2023). Assignments and quizzes are posted and due on Thursday in a given week.
 <br>
