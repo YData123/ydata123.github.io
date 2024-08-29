@@ -9,7 +9,7 @@
 <img src="./dalle3.png" width="300" align="bottom">
 
 <small>
-DALL-E's description of its work: 
+DALL-E's proud description of its own work: 
 "A black and white 2-dimensional Cubist drawing that abstractly portrays a computer and a brain. 
 It blends technological and intellectual elements in a striking monochromatic composition."
 </small>
