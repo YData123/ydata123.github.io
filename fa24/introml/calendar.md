@@ -10,8 +10,8 @@
 
 <small>
 DALL-E's description of its work: 
-A black and white 2-dimensional Cubist drawing that abstractly portrays a computer and a brain. 
-It blends technological and intellectual elements in a striking monochromatic composition.
+"A black and white 2-dimensional Cubist drawing that abstractly portrays a computer and a brain. 
+It blends technological and intellectual elements in a striking monochromatic composition."
 </small>
 <br>
 <br>
