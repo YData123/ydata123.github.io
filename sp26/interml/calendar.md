@@ -36,9 +36,9 @@ Assignments and quizzes are posted and due on Wednesday in a given week.
 
 Calendar Spring 2026
 ---
-Lectures: Monday/Wednesday 1:00-2:15pm
+Lectures: Monday/Wednesday 11:35-12:50pm
 <br>
-[HQ L02 - Humanities Quadrangle L02](https://map.yale.edu/?id=1910#!m/563690?s)
+[WTS A53 - Watson Center, 60 Sachem Street, A53](https://map.yale.edu/?id=1910#!m/563690?s)
 
 Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes | Assignments & Exams
 ----------- | ----------- | ------------- | ------------ | ------------- | ------------- | -----------
