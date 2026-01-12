@@ -38,7 +38,7 @@ Calendar Spring 2026
 ---
 Lectures: Monday/Wednesday 11:35-12:50pm
 <br>
-[WTS A53 - Watson Center, 60 Sachem Street, A53](https://map.yale.edu/?id=1910#!m/563690?s)
+[WTS A53 - Watson Center, 60 Sachem Street, A53](https://map.yale.edu/?id=1910#!m/559919)
 
 Week | Dates |  Topics | Demos & Tutorials |  Lecture Slides | Readings & Notes | Assignments & Exams
 ----------- | ----------- | ------------- | ------------ | ------------- | ------------- | -----------
