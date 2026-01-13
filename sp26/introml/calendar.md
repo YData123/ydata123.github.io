@@ -15,10 +15,6 @@ DALL-E's proud description of its own work:
 It blends technological and intellectual elements in a striking monochromatic composition."
 </small>
 -->
-<br>
-<br>
-
-
 
 
 Introductory Machine Learning
