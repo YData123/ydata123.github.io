@@ -35,6 +35,9 @@ Lectures: Monday/Wednesday 1:00-2:15pm
 
 Complementary readings marked ISL refer to sections in the book [An Introduction to Statistical Learning](https://www.statlearning.com/) (Python version, July 2023). Assignments and quizzes are posted and due on Thursday in a given week.
 <br>
+Background notes on probability and linear algebra from Kevin Murphy's book [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html)
+are [here (probability)](https://github.com/YData123/sds265-sp26/raw/mainr/notes/probabilistic_ml_murphy-probability.pdf) and [here (linear algebra)](https://github.com/YData123/sds265-sp26/raw/main/notes/probabilistic_ml_murphy-linear_algebra.pdf).
+<br>
 
 
 <!--<span style="color:red">Sunday, December 4: Canvas is currently down, across courses. </span> -->
