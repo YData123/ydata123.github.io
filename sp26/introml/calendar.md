@@ -37,7 +37,7 @@ Complementary readings marked ISL refer to sections in the book [An Introduction
 
 
 Background notes on probability and linear algebra from Kevin Murphy's book [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html)
-are [here (probability)](https://github.com/YData123/sds265-sp26/raw/mainr/notes/probabilistic_ml_murphy-probability.pdf) and [here (linear algebra)](https://github.com/YData123/sds265-sp26/raw/main/notes/probabilistic_ml_murphy-linear_algebra.pdf).
+are [here (probability)](https://github.com/YData123/sds265-sp26/raw/main/notes/probabilistic_ml_murphy-probability.pdf) and [here (linear algebra)](https://github.com/YData123/sds265-sp26/raw/main/notes/probabilistic_ml_murphy-linear_algebra.pdf).
 
 <br>
 <br>
