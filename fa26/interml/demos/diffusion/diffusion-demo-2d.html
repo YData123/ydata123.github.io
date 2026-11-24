@@ -268,7 +268,7 @@ function runReverse(anim){const k=kOf(S.sel),N=+$('np').value,lam=+$('lam').valu
  S.rev={A,N,cls};
  $('bars').innerHTML=DATA.map(([w,mx,my],i)=>{const q=cnt[i]/N;return`<div class="bar"><span>(${(+mx.toFixed(1)).toFixed(1).replace('-0.0','0.0')}, ${(+my.toFixed(1)).toFixed(1).replace('-0.0','0.0')})</span><span class="tk"><span style="width:${(q*100).toFixed(1)}%;background:${css(compC(i))}"></span><em style="left:${(w*100).toFixed(1)}%"></em></span><output>${(q*100).toFixed(0)}%</output></div>`}).join('')+
   `<div class="bar"><span>Beyond 3σ of all</span><span class="tk"><span style="width:${(off/N*100).toFixed(1)}%;background:var(--mute)"></span></span><output>${(off/N*100).toFixed(0)}%</output></div>`;
- $('rnote').innerHTML=`Rows are data modes by centre; black ticks mark the true weights. ${DR.find(d=>d.id===S.sel).name}, ${ode?'ODE':'SDE'}, \\(\\lambda = ${lam.toFixed(2)}\\), ${prior?'started from a Gaussian with the mean and covariance of \\(p_T\\)':'started from the exact \\(p_T\\)'}. `+
+ $('rnote').innerHTML=`Rows are data modes by center; black ticks mark the true weights. ${DR.find(d=>d.id===S.sel).name}, ${ode?'ODE':'SDE'}, \\(\\lambda = ${lam.toFixed(2)}\\), ${prior?'started from a Gaussian with the mean and covariance of \\(p_T\\)':'started from the exact \\(p_T\\)'}. `+
   (lam===0?'With \\(\\lambda = 0\\) nothing pulls particles back onto the data.':prior?'Where \\(p_T\\) is far from Gaussian (no drift, short T, weak k) the mismatch shows up as wrong weights or stray particles.':'With the exact score and exact \\(p_T\\) the weights match up to sampling noise and time-step error.');
  tex($('rnote'));
  if(anim&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animate('t3',T,0,3200,drawRev);else{$('t3').value=0;drawRev()}}
