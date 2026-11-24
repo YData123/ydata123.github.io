@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Paths Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&family=Red+Hat+Text:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global',displayAlign:'left'},options:{enableMenu:false}};</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+/* VOICE everyday teaching tool, clear and exact, made to be projected
+   IDEA a lab poster of a 1-D experiment: same noise, swap the drift, read off p_t and the score, run time backwards
+   PICTURE live path plots: five small multiples, a (t,x) density/score field with a draggable time slice, reverse-time paths
+   COLOUR oxford blue band, white panels, magenta for the result; path colours track which data mode a path belongs to
+   TYPE Red Hat Display 700 + Red Hat Text
+   LAYOUT title band with global controls, then three full-width sections; phones stack controls above each figure */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#070f26);--panel:light-dark(#f3f5fb,#0d1a3d);--ink:light-dark(#0b1f4b,#e6ebf7);--mute:light-dark(#56648a,#97a4c6);--line:light-dark(#d7ddeb,#25335e);--acc:light-dark(#e0115f,#ff4f8f);--blue:light-dark(#1f4fd1,#86b6ff);--c1:light-dark(#d95f02,#ff9a4a);--c2:light-dark(#0c8f6c,#3fd6aa);--c3:light-dark(#7a3fd1,#b994ff);--band:#0b1f4b}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Red Hat Text",system-ui,sans-serif;overflow-x:clip}
+.band{padding-block:clamp(24px,3.5vw,52px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff}
+h1,h2{font-family:"Red Hat Display",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,4.4vw,48px)}
+h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:8px}
+p{margin:6px 0 0;max-width:72ch}
+.top p{color:#c9d3ee}
+.eqd{overflow-x:auto;overflow-y:hidden;font-size:1.08em;margin:8px 0 0;max-width:100%}
+mjx-container[display=true]{margin:.35em 0!important}
+.top mjx-container{color:#fff}
+.ctl{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:end;margin-top:22px}
+.ctl label{display:grid;gap:2px;font-size:14px}
+.ctl .row{display:flex;align-items:center;gap:10px}
+.top .ctl label{color:#c9d3ee}
+input[type=range]{width:150px;height:44px;accent-color:var(--acc);margin:0}
+.top input[type=range]{accent-color:#ff4f8f}
+output{font-variant-numeric:tabular-nums;min-width:3.2em;font-weight:500}
+select,button{font:inherit;font-size:16px;min-height:44px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 12px}
+.top select,.top button{background:#13295e;color:#fff;border-color:#3a5194}
+button{cursor:pointer;font-weight:500}
+button.go{background:var(--acc);color:#fff;border-color:transparent}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.chk{display:flex!important;grid-auto-flow:column;align-items:center;gap:8px;min-height:44px}
+.chk input{width:20px;height:20px;accent-color:var(--acc)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:18px}
+.card{display:grid;grid-template-rows:auto auto 230px;text-align:left;padding:10px 10px 8px;background:var(--panel);border:2px solid transparent;border-radius:12px;min-height:0}
+.card:hover{border-color:var(--line)}
+.card[aria-pressed=true]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 7%,var(--panel))}
+.card b{font-family:"Red Hat Display",sans-serif;font-size:17px}
+.card i{font-size:14px;color:var(--mute)}
+.card canvas{width:100%;height:100%;display:block;margin-top:6px}
+.fig{position:relative;background:var(--panel);border-radius:12px}
+.fig canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.trio{display:grid;grid-template-columns:minmax(0,1fr) 150px 150px;gap:8px;height:430px;margin-top:16px}
+.rev{height:440px;margin-top:16px}
+#heat{cursor:ew-resize;touch-action:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--mute);margin-top:10px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sec{border-top:1px solid var(--line)}
+.out{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;margin-top:18px}
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:9.5em minmax(0,1fr) 3.2em;gap:10px;align-items:center;font-size:14px}
+.bar .tk{position:relative;height:22px;background:var(--panel);border-radius:4px;overflow:hidden}
+.bar .tk span{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.bar .tk em{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+.bar output{text-align:right}
+.note{font-size:14px;color:var(--mute)}
+@media(max-width:700px){.out{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.trio{grid-template-columns:minmax(0,1fr) 78px 78px;height:340px}.rev{height:340px}input[type=range]{width:120px}.ctl{gap:8px 18px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="band top"><div class="wrap">
+<h1>Diffusion processes in one dimension</h1>
+<div class="eqd">\[ dX_t = b(X_t,t)\,dt + \sqrt{\nu}\,dW_t, \qquad X_0 \sim p_{\text{data}} \]</div>
+<p>Every panel uses the same data, the same noise variance \(\nu\) and the same Brownian increments. Only the drift \(b\) changes.</p>
+<div class="ctl">
+<label>Data distribution<select id="data"><option value="two">Two modes</option><option value="three">Three modes, uneven</option><option value="skew">Lopsided pair</option></select></label>
+<label>Noise variance ν<span class="row"><input id="nu" type="range" min="0.1" max="4" step="0.05" value="1"><output id="nuv"></output></span></label>
+<label>Horizon T<span class="row"><input id="T" type="range" min="0.5" max="4" step="0.1" value="2"><output id="Tv"></output></span></label>
+<label>Drift strength k<span class="row"><input id="k" type="range" min="0" max="3" step="0.05" value="1"><output id="kv"></output></span></label>
+<button id="reseed" type="button">New noise</button>
+</div>
+</div></header>
+
+<section class="band"><div class="wrap">
+<h2>Forward paths: same noise, two drifts</h2>
+<p>Each path is coloured by the data mode it started in. Left of each plot: \(p_0\). Right: the exact marginal \(p_T\). Click a drift to study it below.</p>
+<div class="cards" id="cards"></div>
+</div></section>
+
+<section class="band sec"><div class="wrap">
+<h2>Marginal density and score at time t: <span id="selName"></span></h2>
+<p id="how" class="note"></p>
+<div class="ctl">
+<label>Time t<span class="row"><input id="tc" type="range" min="0" max="1" step="0.001" value="0.25"><output id="tcv"></output></span></label>
+<label>Background field<select id="hm"><option value="p">Density</option><option value="s">Score</option></select></label>
+<label class="chk"><input id="showp" type="checkbox" checked> Show forward paths</label>
+<button id="sweep" type="button">Sweep t</button>
+</div>
+<div class="trio">
+<div class="fig"><canvas id="heat" aria-label="Density or score field over time and space with draggable time cursor"></canvas></div>
+<div class="fig"><canvas id="den" aria-label="Marginal density at time t"></canvas></div>
+<div class="fig"><canvas id="sco" aria-label="Score at time t"></canvas></div>
+</div>
+<div class="legend" id="leg"></div>
+</div></section>
+
+<section class="band sec"><div class="wrap">
+<h2>Reverse time</h2>
+<div class="eqd">\[ dX_t = \big[\, b(X_t,t) - \nu\,\nabla \log p_t(X_t) \,\big]\,dt + \sqrt{\nu}\,d\bar W_t, \qquad t: T \to 0 \]</div>
+<p>Started at \(t = T\) and integrated back to 0 with the exact score of the selected process. The probability-flow ODE \(\dot x_t = b(x_t,t) - \tfrac12 \nu\,\nabla \log p_t(x_t)\) has the same marginals and no noise.</p>
+<div class="ctl">
+<label>Dynamics<select id="rm"><option value="sde">Reverse SDE</option><option value="ode">Probability-flow ODE</option></select></label>
+<label>Start from<select id="rs"><option value="exact">Exact marginal at T</option><option value="prior">Gaussian prior (matched mean, variance)</option></select></label>
+<label>Score scale λ<span class="row"><input id="lam" type="range" min="0" max="1.5" step="0.05" value="1"><output id="lamv"></output></span></label>
+<label>Particles<select id="np"><option>200</option><option selected>1000</option><option>3000</option></select></label>
+<button id="run" class="go" type="button">Run reverse process</button>
+</div>
+<div class="fig rev"><canvas id="rev" aria-label="Reverse-time sample paths"></canvas></div>
+<div class="out">
+<div><b>Mode weights recovered at t = 0</b><div class="bars" id="bars"></div></div>
+<p class="note" id="rnote"></p>
+</div>
+</div></section>
+
+<span id="probe" style="display:none"></span>
+<script>
+{
+const $=id=>document.getElementById(id);
+const tex=el=>{const M=window.MathJax;if(M&&M.typesetPromise){M.typesetClear&&M.typesetClear([el]);M.typesetPromise([el]).catch(()=>{})}};
+const XL=-6,XH=6,NT=400,NS=400,P=800,NL=36,NR=500,NLR=70;
+const PRE={two:[[.5,-2,.3],[.5,2,.3]],three:[[.2,-2.6,.25],[.5,0,.35],[.3,2.4,.25]],skew:[[.75,-1.2,.45],[.25,2.6,.2]]};
+const DR=[
+{id:'zero',name:'No drift',tex:'b = 0',lin:(k,T)=>[t=>0,t=>0]},
+{id:'ou',name:'Ornstein–Uhlenbeck',tex:'b = -k\\,x',lin:(k,T)=>[t=>-k,t=>0]}];
+const S={sel:'ou',seed:7,models:{},fwd:{},f:{},heat:null,heatKey:'',rev:null,prog:1};
+const L2P=Math.log(2*Math.PI);
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function gauss(r){let u=0;while(!u)u=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*r())}
+function lse(a){let m=-Infinity;for(const v of a)if(v>m)m=v;if(m===-Infinity)return m;let s=0;for(const v of a)s+=Math.exp(v-m);return m+Math.log(s)}
+function mixLog(d,x){return lse(d.map(([w,m,s])=>Math.log(w)-.5*((x-m)**2/(s*s)+L2P+2*Math.log(s))))}
+
+function buildLinear(a,b,d,g,T){
+ const K=d.length,h=T/NT,M=new Float64Array((NT+1)*K),V=new Float64Array((NT+1)*K),G=g*g;
+ d.forEach(([w,m,s],i)=>{M[i]=m;V[i]=s*s});
+ const rhs=(t,m,v)=>{const A=a(t);return[A*m+b(t),2*A*v+G]};
+ for(let k=0;k<NT;k++)for(let i=0;i<K;i++){
+  let m=M[k*K+i],v=V[k*K+i],t=k*h;const hh=h/2;
+  for(let q=0;q<2;q++){const k1=rhs(t,m,v),k2=rhs(t+hh/2,m+hh/2*k1[0],v+hh/2*k1[1]),k3=rhs(t+hh/2,m+hh/2*k2[0],v+hh/2*k2[1]),k4=rhs(t+hh,m+hh*k3[0],v+hh*k3[1]);
+   m+=hh/6*(k1[0]+2*k2[0]+2*k3[0]+k4[0]);v+=hh/6*(k1[1]+2*k2[1]+2*k3[1]+k4[1]);t+=hh}
+  M[(k+1)*K+i]=m;V[(k+1)*K+i]=v}
+ const lw=d.map(c=>Math.log(c[0]));
+ return{exact:true,at(t){
+  const u=Math.min(NT,Math.max(0,t/T*NT)),k0=Math.min(NT-1,Math.floor(u)),fr=u-k0;
+  const m=[],v=[],l=new Array(K);
+  for(let i=0;i<K;i++){m[i]=M[k0*K+i]*(1-fr)+M[(k0+1)*K+i]*fr;v[i]=V[k0*K+i]*(1-fr)+V[(k0+1)*K+i]*fr}
+  const terms=x=>{for(let i=0;i<K;i++)l[i]=lw[i]-.5*((x-m[i])**2/v[i]+L2P+Math.log(v[i]));return l};
+  return{logp:x=>lse(terms(x)),score(x){terms(x);let mx=-Infinity;for(const q of l)if(q>mx)mx=q;let z=0,s=0;for(let i=0;i<K;i++){const e=Math.exp(l[i]-mx);z+=e;s+=e*(m[i]-x)/v[i]}return s/z}}}}}
+
+let G,T,K,DATA,x0,c0,Z;
+function sampleData(){const r=rng(S.seed);x0=new Float32Array(P);c0=new Uint8Array(P);Z=new Float32Array(P*NS);
+ for(let n=0;n<P;n++){let u=r(),i=0;while(i<DATA.length-1&&u>DATA[i][0]){u-=DATA[i][0];i++}c0[n]=i;x0[n]=DATA[i][1]+DATA[i][2]*gauss(r)}
+ for(let i=0;i<P*NS;i++)Z[i]=gauss(r)}
+function rebuild(){
+ const NU=+$('nu').value;G=Math.sqrt(NU);T=+$('T').value;K=+$('k').value;DATA=PRE[$('data').value];
+ $('nuv').value=NU.toFixed(2);$('Tv').value=T.toFixed(1);$('kv').value=K.toFixed(2);
+ sampleData();const h=T/NS,sq=G*Math.sqrt(h);
+ for(const d of DR){
+  const[a,b]=d.lin(K,T),f=(x,t)=>a(t)*x+b(t);S.models[d.id]=buildLinear(a,b,DATA,G,T);
+  S.f[d.id]=f;const out=new Float32Array(P*(NS+1));
+  for(let n=0;n<P;n++){let x=x0[n];const o=n*(NS+1);out[o]=x;
+   for(let s=0;s<NS;s++){x+=f(x,s*h)*h+sq*Z[n*NS+s];x=Math.max(-60,Math.min(60,x));out[o+s+1]=x}}
+  S.fwd[d.id]=out}
+ S.heatKey='';$('tc').max=T;if(+$('tc').value>T)$('tc').value=T/4;
+ runReverse(false);drawAll()}
+
+/* colours */
+let C={};
+function rgb(v){$('probe').style.color=`var(${v})`;return getComputedStyle($('probe')).color.match(/[\d.]+/g).slice(0,3).map(Number)}
+function readC(){for(const v of['--bg','--panel','--ink','--mute','--line','--acc','--blue','--c1','--c2','--c3'])C[v]=rgb(v);S.heatKey='';}
+const css=(a,al=1)=>`rgba(${a[0]},${a[1]},${a[2]},${al})`;
+const mix=(a,b,u)=>[a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u,a[2]+(b[2]-a[2])*u];
+const compC=i=>C[['--c1','--c2','--c3'][i%3]];
+
+function fit(cv){const r=cv.getBoundingClientRect(),d=devicePixelRatio||1,w=Math.max(1,Math.round(r.width*d)),h=Math.max(1,Math.round(r.height*d));
+ if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}const c=cv.getContext('2d');c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,r.width,r.height);return[c,r.width,r.height]}
+const Yf=R=>x=>R.t+(XH-x)/(XH-XL)*R.h;
+const FONT='13px "Red Hat Text",system-ui,sans-serif';
+function xTicks(c,R,grid=true){const Y=Yf(R);c.font=FONT;c.textAlign='right';c.textBaseline='middle';
+ for(let x=-4;x<=4;x+=2){const y=Y(x);if(grid){c.strokeStyle=css(C['--line'],.8);c.lineWidth=1;c.beginPath();c.moveTo(R.l,y);c.lineTo(R.l+R.w,y);c.stroke()}
+  c.fillStyle=css(C['--mute']);c.fillText(x,R.l-6,y)}}
+function tTicks(c,R,a,b,label){c.font=FONT;c.fillStyle=css(C['--mute']);c.textAlign='center';c.textBaseline='top';
+ const st=T<=1?.25:T<=2.5?.5:1,narrow=(b-a)<260;let i=0;
+ for(let t=0;t<=T+1e-9;t+=st,i++){if(narrow&&i%2)continue;c.fillText(+t.toFixed(2),a+t/T*(b-a),R.t+R.h+6)}
+ if(label){c.textAlign='right';c.fillText(label,b,R.t+R.h+6+0)}}
+function paths(c,arr,n,steps,TX,Y,cls,s0,s1,al){c.lineWidth=1.1;
+ for(let i=0;i<n;i++){c.strokeStyle=css(compC(cls[i]),al);c.beginPath();const o=i*(steps+1);
+  for(let s=s0;s<=s1;s++){const X=TX(s),y=Y(arr[o+s]);s===s0?c.moveTo(X,y):c.lineTo(X,y)}c.stroke()}}
+function silhouette(c,R,at,x0p,dir,wid,col){const Y=Yf(R),N=140,v=[];let mx=0;
+ for(let i=0;i<=N;i++){const x=XL+(XH-XL)*i/N,p=Math.exp(at.logp(x));v.push(p);mx=Math.max(mx,p)}
+ c.fillStyle=css(col,.28);c.strokeStyle=css(col,.9);c.lineWidth=1.4;c.beginPath();c.moveTo(x0p,Y(XL));
+ for(let i=0;i<=N;i++)c.lineTo(x0p+dir*wid*v[i]/mx,Y(XL+(XH-XL)*i/N));c.lineTo(x0p,Y(XH));c.closePath();c.fill();c.stroke();return mx}
+
+/* section 1 */
+$('cards').innerHTML=DR.map(d=>`<button class="card" type="button" id="card-${d.id}" data-id="${d.id}" aria-pressed="false"><b>${d.name}</b><i>\\(${d.tex}\\)</i><canvas></canvas></button>`).join('');
+for(const b of document.querySelectorAll('.card'))b.addEventListener('click',()=>{S.sel=b.dataset.id;S.heatKey='';runReverse(false);drawAll()});
+function drawMini(d){const cv=$('card-'+d.id).querySelector('canvas'),[c,W,H]=fit(cv);
+ const sw=Math.min(34,W*.15),R={l:sw,t:2,w:W-2*sw,h:H-4},Y=Yf(R),m=S.models[d.id];
+ c.strokeStyle=css(C['--line']);c.lineWidth=1;c.beginPath();c.moveTo(R.l,Y(0));c.lineTo(R.l+R.w,Y(0));c.stroke();
+ c.save();c.beginPath();c.rect(R.l,R.t,R.w,R.h);c.clip();
+ paths(c,S.fwd[d.id],NL,NS,s=>R.l+s/NS*R.w,Y,c0,0,NS,.55);c.restore();
+ silhouette(c,R,m.at(0),R.l-2,-1,sw-3,C['--mute']);silhouette(c,R,m.at(T),R.l+R.w+2,1,sw-3,C['--acc'])}
+
+/* section 2 */
+function heatImage(m){const key=S.sel+$('hm').value+G+T+K+$('data').value+C['--bg'];if(S.heatKey===key)return S.heat;
+ const cols=260,rows=200,cv=document.createElement('canvas');cv.width=cols;cv.height=rows;const c=cv.getContext('2d'),img=c.createImageData(cols,rows),mode=$('hm').value;
+ const lp=new Float64Array(rows),sc=new Float64Array(rows);
+ for(let i=0;i<cols;i++){const at=m.at((i+.5)/cols*T);let mx=-Infinity;
+  for(let r=0;r<rows;r++){const x=XH-(r+.5)/rows*(XH-XL);lp[r]=at.logp(x);if(mode==='s')sc[r]=at.score(x);if(lp[r]>mx)mx=lp[r]}
+  for(let r=0;r<rows;r++){let col;
+   if(mode==='p'){const u=Math.pow(Math.exp(lp[r]-mx),.6);col=mix(C['--panel'],C['--blue'],u*.9)}
+   else{const a=Math.min(1,Math.max(0,(lp[r]-mx+12)/6)),u=Math.tanh(sc[r]/3);col=mix(C['--panel'],u>0?C['--acc']:C['--blue'],Math.abs(u)*a*.9)}
+   const o=(r*cols+i)*4;img.data[o]=col[0];img.data[o+1]=col[1];img.data[o+2]=col[2];img.data[o+3]=255}}
+ c.putImageData(img,0,0);S.heat=cv;S.heatKey=key;return cv}
+const MG={l:34,r:6,t:10,b:28};
+const rectOf=(W,H,m=MG)=>({l:m.l,t:m.t,w:W-m.l-m.r,h:H-m.t-m.b});
+function drawHeat(){const[c,W,H]=fit($('heat')),R=rectOf(W,H),Y=Yf(R),m=S.models[S.sel],tc=+$('tc').value;
+ c.imageSmoothingEnabled=true;c.drawImage(heatImage(m),R.l,R.t,R.w,R.h);xTicks(c,R,false);tTicks(c,R,R.l,R.l+R.w);
+ if($('showp').checked){c.save();c.beginPath();c.rect(R.l,R.t,R.w,R.h);c.clip();paths(c,S.fwd[S.sel],NL,NS,s=>R.l+s/NS*R.w,Y,c0,0,NS,.6);c.restore()}
+ const X=R.l+tc/T*R.w;c.strokeStyle=css(C['--ink']);c.lineWidth=2;c.beginPath();c.moveTo(X,R.t);c.lineTo(X,R.t+R.h);c.stroke();
+ c.font='600 13px "Red Hat Text",sans-serif';const lab='t = '+tc.toFixed(2),tw=c.measureText(lab).width+12,bx=Math.min(R.l+R.w-tw,Math.max(R.l,X-tw/2));
+ c.fillStyle=css(C['--ink']);c.fillRect(bx,R.t,tw,20);c.fillStyle=css(C['--bg']);c.textAlign='left';c.textBaseline='middle';c.fillText(lab,bx+6,R.t+10)}
+function drawSlices(){const tc=+$('tc').value,at=S.models[S.sel].at(tc),si=Math.round(tc/T*NS);
+ {const[c,W,H]=fit($('den')),R=rectOf(W,H,{l:6,r:6,t:10,b:28}),Y=Yf(R),nb=60,bw=(XH-XL)/nb,cnt=new Float64Array(nb),arr=S.fwd[S.sel];
+  for(let n=0;n<P;n++){const b=Math.floor((arr[n*(NS+1)+si]-XL)/bw);if(b>=0&&b<nb)cnt[b]++}
+  const pts=[];let mx=0;for(let i=0;i<=200;i++){const x=XL+(XH-XL)*i/200,p=Math.exp(at.logp(x));pts.push(p);mx=Math.max(mx,p)}
+  for(let b=0;b<nb;b++){cnt[b]/=P*bw;mx=Math.max(mx,cnt[b])}
+  c.fillStyle=css(C['--mute'],.35);for(let b=0;b<nb;b++)if(cnt[b])c.fillRect(R.l,Y(XL+(b+1)*bw),cnt[b]/mx*R.w,Math.max(1,Y(XL)-Y(XL+bw)-1));
+  c.strokeStyle=css(C['--blue']);c.lineWidth=2;c.beginPath();pts.forEach((p,i)=>{const X=R.l+p/mx*R.w,y=Y(XL+(XH-XL)*i/200);i?c.lineTo(X,y):c.moveTo(X,y)});c.stroke();
+  c.font=FONT;c.fillStyle=css(C['--mute']);c.textAlign='center';c.textBaseline='top';c.fillText('density',R.l+R.w/2,R.t+R.h+6)}
+ {const[c,W,H]=fit($('sco')),R=rectOf(W,H,{l:6,r:6,t:10,b:28}),Y=Yf(R),N=240,sv=[],lv=[];let lm=-Infinity;
+  for(let i=0;i<=N;i++){const x=XL+(XH-XL)*i/N;sv.push(at.score(x));lv.push(at.logp(x));lm=Math.max(lm,lv[i])}
+  let sm=0;for(let i=0;i<=N;i++)if(lv[i]>lm-9)sm=Math.max(sm,Math.abs(sv[i]));
+  const st=[1,2,5,10,20,50,100,200,500];sm=st.find(v=>v>=sm*1.05)||sm;
+  const SX=v=>R.l+R.w/2+Math.max(-1,Math.min(1,v/sm))*R.w/2;
+  c.strokeStyle=css(C['--line']);c.lineWidth=1;c.beginPath();c.moveTo(SX(0),R.t);c.lineTo(SX(0),R.t+R.h);c.stroke();
+  for(let i=0;i<N;i++){c.strokeStyle=css(C['--acc'],lv[i]>lm-9?1:.25);c.lineWidth=2;c.beginPath();c.moveTo(SX(sv[i]),Y(XL+(XH-XL)*i/N));c.lineTo(SX(sv[i+1]),Y(XL+(XH-XL)*(i+1)/N));c.stroke()}
+  c.font=FONT;c.fillStyle=css(C['--mute']);c.textBaseline='top';c.textAlign='center';c.fillText('score ±'+sm,R.l+R.w/2,R.t+R.h+6)}}
+function legend(){const s=$('hm').value==='s';
+ $('leg').innerHTML=(s?`<span><i class="sw" style="background:var(--acc)"></i>score &gt; 0, pushes toward larger x</span><span><i class="sw" style="background:var(--blue)"></i>score &lt; 0, pushes toward smaller x</span><span>faded where \\(p_t\\) is negligible</span>`
+ :`<span><i class="sw" style="background:var(--blue)"></i>\\(p_t(x)\\), each time column scaled to its own peak</span>`)+
+ `<span><i class="sw" style="background:var(--mute);opacity:.5"></i>histogram of ${P} forward particles at t</span><span>Drag the plot to move t</span>`;tex($('leg'))}
+
+/* section 3 */
+function runReverse(anim){const m=S.models[S.sel],f=S.f[S.sel],N=+$('np').value,lam=+$('lam').value,ode=$('rm').value==='ode',h=T/NR,r=rng(S.seed*31+5);
+ $('lamv').value=lam.toFixed(2);
+ const aT=m.at(T),gx=[],gp=[];let z=0,mu=0,m2=0;
+ for(let i=0;i<=1200;i++){const x=-12+24*i/1200,p=Math.exp(aT.logp(x));gx.push(x);gp.push(p);z+=p;mu+=p*x;m2+=p*x*x}
+ mu/=z;const sd=Math.sqrt(Math.max(1e-6,m2/z-mu*mu));const cdf=[];let acc=0;for(const p of gp){acc+=p/z;cdf.push(acc)}
+ const x=new Float64Array(N),start=new Float32Array(N);
+ for(let n=0;n<N;n++){if($('rs').value==='prior')x[n]=mu+sd*gauss(r);else{const u=r();let lo=0,hi=gx.length-1;while(lo<hi){const md=(lo+hi)>>1;cdf[md]<u?lo=md+1:hi=md}x[n]=gx[lo]+(r()-.5)*(24/1200)}start[n]=x[n]}
+ const nl=Math.min(NLR,N),lines=new Float32Array(nl*(NR+1));for(let n=0;n<nl;n++)lines[n*(NR+1)+NR]=x[n];
+ const G2=G*G,sq=G*Math.sqrt(h);
+ for(let s=NR;s>0;s--){const t=s*h,at=m.at(t);
+  for(let n=0;n<N;n++){const sc=lam*at.score(x[n]),dr=f(x[n],t)-(ode?.5:1)*G2*sc;x[n]=x[n]-dr*h+(ode?0:sq*gauss(r));x[n]=Math.max(-60,Math.min(60,x[n]));if(n<nl)lines[n*(NR+1)+s-1]=x[n]}}
+ const cls=new Uint8Array(N),cnt=new Array(DATA.length).fill(0);let off=0;
+ for(let n=0;n<N;n++){let b=0,bv=-Infinity,dm=Infinity;DATA.forEach(([w,mm,s],i)=>{const l=Math.log(w)-.5*(x[n]-mm)**2/(s*s)-Math.log(s);if(l>bv){bv=l;b=i}dm=Math.min(dm,Math.abs(x[n]-mm)/s)});cls[n]=b;cnt[b]++;if(dm>3)off++}
+ S.rev={lines,nl,fin:Float32Array.from(x),start,cls,cnt,off,N,mu,sd};
+ $('bars').innerHTML=DATA.map(([w,mm],i)=>{const q=cnt[i]/N;return`<div class="bar"><span>Mode at x = ${mm.toFixed(1)}</span><span class="tk"><span style="width:${(q*100).toFixed(1)}%;background:${css(compC(i))}"></span><em style="left:${(w*100).toFixed(1)}%"></em></span><output>${(q*100).toFixed(0)}%</output></div>`}).join('')+
+  `<div class="bar"><span>More than 3σ from any mode</span><span class="tk"><span style="width:${(off/N*100).toFixed(1)}%;background:var(--mute)"></span></span><output>${(off/N*100).toFixed(0)}%</output></div>`;
+$('rnote').innerHTML=`Black ticks mark the true weights. Drift: ${DR.find(d=>d.id===S.sel).name}, ${ode?'ODE':'SDE'}, \\(\\lambda = ${lam.toFixed(2)}\\), ${$('rs').value==='prior'?`started from \\(\\mathcal N(${mu.toFixed(2)},\\,${sd.toFixed(2)}^2)\\)`:'started from the exact \\(p_T\\)'}. `+
+  (lam===0?'With \\(\\lambda = 0\\) the reverse process only undoes the drift; nothing pulls particles back onto the data.':$('rs').value==='prior'?'If \\(p_T\\) is far from Gaussian (no drift, weak drift or short T), the prior mismatch shows up as wrong weights.':'With the exact score and exact \\(p_T\\), the weights match up to sampling noise and time-step error.');tex($('rnote'));
+ if(anim&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const t0=performance.now();S.prog=0;const step=now=>{S.prog=Math.min(1,(now-t0)/2600);drawRev();if(S.prog<1)requestAnimationFrame(step)};requestAnimationFrame(step)}else{S.prog=1;drawRev()}}
+function hist(c,R,vals,x0p,dir,wid,col,at,lineCol){const Y=Yf(R),nb=60,bw=(XH-XL)/nb,ct=new Float64Array(nb);
+ for(const v of vals){const b=Math.floor((v-XL)/bw);if(b>=0&&b<nb)ct[b]++}
+ let mx=0;const pts=[];for(let i=0;i<=160;i++){const p=Math.exp(at.logp(XL+(XH-XL)*i/160));pts.push(p);mx=Math.max(mx,p)}
+ for(let b=0;b<nb;b++){ct[b]/=vals.length*bw;mx=Math.max(mx,ct[b])}
+ c.fillStyle=css(col,.45);for(let b=0;b<nb;b++)if(ct[b]){const w=ct[b]/mx*wid;c.fillRect(dir>0?x0p:x0p-w,Y(XL+(b+1)*bw),w,Math.max(1,Y(XL)-Y(XL+bw)-1))}
+ c.strokeStyle=css(lineCol);c.lineWidth=1.8;c.beginPath();pts.forEach((p,i)=>{const X=x0p+dir*p/mx*wid,y=Y(XL+(XH-XL)*i/160);i?c.lineTo(X,y):c.moveTo(X,y)});c.stroke()}
+function drawRev(){const[c,W,H]=fit($('rev')),R=rectOf(W,H),Y=Yf(R),v=S.rev,m=S.models[S.sel];if(!v)return;
+ const sw=Math.min(110,R.w*.17),A0=R.l+sw,A1=R.l+R.w-sw,TX=s=>A0+s/NR*(A1-A0);
+ c.globalAlpha=.45;c.drawImage(heatImage(m),A0,R.t,A1-A0,R.h);c.globalAlpha=1;
+ xTicks(c,R,false);tTicks(c,R,A0,A1);
+ c.font=FONT;c.fillStyle=css(C['--mute']);c.textBaseline='top';c.textAlign='center';c.fillText('t = 0',(R.l+A0)/2,R.t+R.h+6);c.fillText('start, t = T',(A1+R.l+R.w)/2,R.t+R.h+6);
+ const sEnd=Math.round(NR*(1-S.prog));
+ c.save();c.beginPath();c.rect(A0,R.t,A1-A0,R.h);c.clip();
+ const cls=v.cls;paths(c,v.lines,v.nl,NR,TX,Y,cls,sEnd,NR,.6);
+ if(S.prog<1){for(let n=0;n<v.nl;n++){c.fillStyle=css(compC(cls[n]));c.beginPath();c.arc(TX(sEnd),Y(v.lines[n*(NR+1)+sEnd]),2.6,0,7);c.fill()}}
+ c.restore();
+ hist(c,R,v.start,A1+3,1,sw-6,C['--mute'],m.at(T),C['--acc']);
+ if(S.prog>=1)hist(c,R,v.fin,A0-3,-1,sw-6,C['--mute'],m.at(0),C['--blue']);
+ c.strokeStyle=css(C['--line']);c.lineWidth=1;c.beginPath();c.moveTo(A0,R.t);c.lineTo(A0,R.t+R.h);c.moveTo(A1,R.t);c.lineTo(A1,R.t+R.h);c.stroke()}
+
+function drawAll(){for(const d of DR){$('card-'+d.id).setAttribute('aria-pressed',d.id===S.sel);drawMini(d)}
+ const d=DR.find(q=>q.id===S.sel);$('selName').textContent=d.name;
+ $('how').innerHTML=`Linear drift \\(${d.tex}\\), of the form \\(b = \\alpha(t)\\,x + \\gamma(t)\\): every Gaussian component stays Gaussian, with \\(\\dot m = \\alpha m + \\gamma\\) and \\(\\dot v = 2\\alpha v + \\nu\\). So \\(p_t\\) is an exact mixture and \\(\\nabla\\log p_t(x) = \\sum_i r_i(x)\\,(m_i - x)/v_i\\).`;tex($('how'));
+ $('tcv').value=(+$('tc').value).toFixed(2);legend();drawHeat();drawSlices();drawRev()}
+
+let pend=0;const sched=fn=>{if(pend)cancelAnimationFrame(pend);pend=requestAnimationFrame(()=>{pend=0;fn()})};
+for(const id of['nu','T','k'])$(id).addEventListener('input',()=>{$(id+'v').value=(+$(id).value).toFixed(id==='T'?1:2);sched(rebuild)});
+$('data').addEventListener('change',rebuild);
+$('reseed').addEventListener('click',()=>{S.seed=(S.seed*48271+11)%2147483647;rebuild()});
+$('tc').addEventListener('input',()=>{$('tcv').value=(+$('tc').value).toFixed(2);drawHeat();drawSlices()});
+$('hm').addEventListener('change',()=>{legend();drawHeat();drawRev()});
+$('showp').addEventListener('change',drawHeat);
+let sweeping=0;
+$('sweep').addEventListener('click',()=>{if(sweeping){sweeping=0;return}const t0=performance.now();sweeping=1;$('sweep').textContent='Stop';
+ const st=now=>{if(!sweeping){$('sweep').textContent='Sweep t';return}const u=((now-t0)/5000)%1;$('tc').value=u*T;$('tcv').value=(u*T).toFixed(2);drawHeat();drawSlices();requestAnimationFrame(st)};requestAnimationFrame(st)});
+const hv=$('heat');let drag=false;
+const setT=e=>{const r=hv.getBoundingClientRect(),u=(e.clientX-r.left-MG.l)/(r.width-MG.l-MG.r);$('tc').value=Math.max(0,Math.min(1,u))*T;$('tcv').value=(+$('tc').value).toFixed(2);drawHeat();drawSlices()};
+hv.addEventListener('pointerdown',e=>{drag=true;hv.setPointerCapture(e.pointerId);setT(e)});
+hv.addEventListener('pointermove',e=>{if(drag)setT(e)});
+hv.addEventListener('pointerup',()=>{drag=false});
+$('run').addEventListener('click',()=>runReverse(true));
+for(const id of['rm','rs','np'])$(id).addEventListener('change',()=>runReverse(true));
+$('lam').addEventListener('input',()=>{$('lamv').value=(+$('lam').value).toFixed(2)});
+$('lam').addEventListener('change',()=>runReverse(true));
+const ro=new ResizeObserver(()=>sched(drawAll));ro.observe(document.body);
+const mo=new MutationObserver(()=>{readC();drawAll()});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{readC();drawAll()});
+readC();rebuild();
+document.fonts&&document.fonts.ready.then(()=>drawAll());
+}
+</script>
+</body>
+</html>
