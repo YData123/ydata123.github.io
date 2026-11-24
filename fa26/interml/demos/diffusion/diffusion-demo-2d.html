@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion 2D Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&family=Red+Hat+Text:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global',displayAlign:'left'},options:{enableMenu:false}};</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+/* VOICE everyday teaching tool, clear and exact, made to be projected
+   IDEA a lab poster of a 2-D experiment: point clouds in the plane, the score as a field of arrows, time run backwards
+   PICTURE square plane views: forward clouds for two drifts, a density + score-arrow field at time t, the reverse-time cloud
+   COLOUR oxford blue band, white panels, density in blue, magenta for actions; particles coloured by data mode
+   TYPE Red Hat Display 700 + Red Hat Text
+   LAYOUT title band with global controls; sections pair a square plot with its controls and notes; phones stack */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#070f26);--panel:light-dark(#f3f5fb,#0d1a3d);--ink:light-dark(#0b1f4b,#e6ebf7);--mute:light-dark(#56648a,#97a4c6);--line:light-dark(#d7ddeb,#25335e);--acc:light-dark(#e0115f,#ff4f8f);--blue:light-dark(#1f4fd1,#86b6ff);--c1:light-dark(#d95f02,#ff9a4a);--c2:light-dark(#0c8f6c,#3fd6aa);--c3:light-dark(#7a3fd1,#b994ff);--c4:light-dark(#b8860b,#f2c94c);--c5:light-dark(#c2185b,#ff7eb3);--c6:light-dark(#00838f,#4dd0e1);--band:#0b1f4b}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 "Red Hat Text",system-ui,sans-serif;overflow-x:clip}
+.band{padding-block:clamp(24px,3.5vw,52px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff}
+h1,h2{font-family:"Red Hat Display",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(32px,4.4vw,48px)}
+h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:8px}
+p{margin:6px 0 0;max-width:72ch}
+.top p{color:#c9d3ee}
+.eqd{overflow-x:auto;overflow-y:hidden;font-size:1.08em;margin:8px 0 0;max-width:100%}
+mjx-container[display=true]{margin:.35em 0!important}
+.top mjx-container{color:#fff}
+.ctl{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:end;margin-top:20px}
+.ctl label{display:grid;gap:2px;font-size:14px}
+.ctl .row{display:flex;align-items:center;gap:10px}
+.top .ctl label{color:#c9d3ee}
+input[type=range]{width:150px;height:44px;accent-color:var(--acc);margin:0}
+.top input[type=range]{accent-color:#ff4f8f}
+output{font-variant-numeric:tabular-nums;min-width:3.2em;font-weight:500}
+select,button{font:inherit;font-size:16px;min-height:44px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 12px}
+.top select,.top button{background:#13295e;color:#fff;border-color:#3a5194}
+button{cursor:pointer;font-weight:500}
+button.go{background:var(--acc);color:#fff;border-color:transparent}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.chk{display:flex!important;align-items:center;gap:8px;min-height:44px}
+.chk input{width:20px;height:20px;accent-color:var(--acc)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px;max-width:1000px}
+.card{display:grid;text-align:left;padding:10px;background:var(--panel);border:2px solid transparent;border-radius:12px;gap:2px}
+.card:hover{border-color:var(--line)}
+.card[aria-pressed=true]{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 7%,var(--panel))}
+.card b{font-family:"Red Hat Display",sans-serif;font-size:17px}
+.card i{font-size:14px;color:var(--mute)}
+.sq{position:relative;aspect-ratio:1/1;width:100%;background:var(--panel);border-radius:12px;margin-top:6px}
+.card .sq{background:var(--bg)}
+.sq canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pair{display:grid;grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:28px;margin-top:16px;align-items:start}
+.pair .ctl{margin-top:0}
+.sec{border-top:1px solid var(--line)}
+.legend{display:grid;gap:6px;font-size:14px;color:var(--mute);margin-top:14px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.facts{display:grid;grid-template-columns:auto auto;justify-content:start;gap:4px 18px;margin-top:14px;font-size:15px}
+.facts output{text-align:right}
+.bars{display:grid;gap:7px;margin-top:8px}
+.bar{display:grid;grid-template-columns:8.5em minmax(0,1fr) 3em;gap:10px;align-items:center;font-size:14px}
+.bar .tk{position:relative;height:20px;background:var(--panel);border-radius:4px;overflow:hidden}
+.bar .tk span{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.bar .tk em{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+.bar output{text-align:right}
+.note{font-size:14px;color:var(--mute)}
+h3{font:600 17px "Red Hat Display",sans-serif;margin:20px 0 0}
+@media(max-width:820px){.pair{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){input[type=range]{width:120px}.ctl{gap:8px 18px}}
+</style>
+</head>
+<body>
+<header class="band top"><div class="wrap">
+<h1>Diffusion processes in two dimensions</h1>
+<div class="eqd">\[ dX_t = b(X_t,t)\,dt + \sqrt{\nu}\,dW_t, \qquad X_t \in \mathbb{R}^2,\quad X_0 \sim p_{\text{data}} \]</div>
+<p>\(W_t\) is a standard 2D Brownian motion, so each coordinate receives noise of variance \(\nu\,dt\). Both panels use the same data, the same \(\nu\) and the same Brownian increments. Only the drift \(b\) changes.</p>
+<div class="ctl">
+<label>Data distribution<select id="data"><option value="ring">Ring of six</option><option value="three">Three blobs, uneven</option><option value="four">Four corners</option></select></label>
+<label>Noise variance ν<span class="row"><input id="nu" type="range" min="0.1" max="4" step="0.05" value="1"><output id="nuv"></output></span></label>
+<label>Horizon T<span class="row"><input id="T" type="range" min="0.5" max="4" step="0.1" value="2"><output id="Tv"></output></span></label>
+<label>OU strength k<span class="row"><input id="k" type="range" min="0.1" max="3" step="0.05" value="1"><output id="kv"></output></span></label>
+<button id="reseed" type="button">New noise</button>
+</div>
+</div></header>
+
+<section class="band"><div class="wrap">
+<h2>Forward paths: same noise, two drifts</h2>
+<p>Particles are coloured by the data mode they started in. Dashed circles mark two standard deviations of each data component. Trails follow 30 particles from \(t=0\). Click a drift to study it below.</p>
+<div class="ctl">
+<label>Time t<span class="row"><input id="t1" type="range" min="0" max="2" step="0.001" value="2"><output id="t1v"></output></span></label>
+<button id="play1" type="button" class="go">Play forward</button>
+</div>
+<div class="cards" id="cards"></div>
+</div></section>
+
+<section class="band sec"><div class="wrap">
+<h2>Marginal density and score at time t: <span id="selName"></span></h2>
+<div class="pair">
+<div class="sq"><canvas id="field" aria-label="Density heatmap and score arrows in the plane"></canvas></div>
+<div>
+<div class="ctl">
+<label>Time t<span class="row"><input id="t2" type="range" min="0" max="2" step="0.001" value="0.3"><output id="t2v"></output></span></label>
+<button id="sweep" type="button">Sweep t</button>
+</div>
+<div class="ctl" style="margin-top:4px">
+<label class="chk"><input id="arr" type="checkbox" checked> Score arrows</label>
+<label class="chk"><input id="dots" type="checkbox"> Forward particles</label>
+</div>
+<div class="legend">
+<span><i class="sw" style="background:var(--blue)"></i>Density \(p_t(x)\), scaled to its peak at this \(t\)</span>
+<span>Arrows show \(\nabla \log p_t(x)\). Length saturates for large scores, and arrows fade where \(p_t\) is negligible.</span>
+</div>
+<p class="note" id="how"></p>
+<div class="facts">
+<span>Mean scaling \(e^{-kt}\)</span><output id="fs"></output>
+<span>Component std \(\sqrt{v(t)}\)</span><output id="fv"></output>
+<span>Largest score shown</span><output id="fm"></output>
+</div>
+</div>
+</div>
+</div></section>
+
+<section class="band sec"><div class="wrap">
+<h2>Reverse time</h2>
+<div class="eqd">\[ dX_t = \big[\, b(X_t,t) - \nu\,\nabla \log p_t(X_t) \,\big]\,dt + \sqrt{\nu}\,d\bar W_t, \qquad t: T \to 0 \]</div>
+<p>Particles start at \(t=T\) and run back to 0 with the exact score. The probability-flow ODE \(\dot x_t = b(x_t,t) - \tfrac12 \nu\,\nabla \log p_t(x_t)\) has the same marginals and no noise.</p>
+<div class="pair">
+<div class="sq"><canvas id="rev" aria-label="Reverse-time particle cloud in the plane"></canvas></div>
+<div>
+<div class="ctl">
+<label>Dynamics<select id="rm"><option value="sde">Reverse SDE</option><option value="ode">Probability-flow ODE</option></select></label>
+<label>Start from<select id="rs"><option value="exact">Exact marginal at T</option><option value="prior">Gaussian prior (matched mean, covariance)</option></select></label>
+<label>Score scale λ<span class="row"><input id="lam" type="range" min="0" max="1.5" step="0.05" value="1"><output id="lamv"></output></span></label>
+<label>Particles<select id="np"><option>300</option><option selected>1500</option><option>4000</option></select></label>
+</div>
+<div class="ctl" style="margin-top:12px">
+<button id="run" class="go" type="button">Run reverse process</button>
+<label>Scrub time t<span class="row"><input id="t3" type="range" min="0" max="2" step="0.001" value="0"><output id="t3v"></output></span></label>
+</div>
+<h3>Mode weights recovered at \(t = 0\)</h3>
+<div class="bars" id="bars"></div>
+<p class="note" id="rnote"></p>
+</div>
+</div>
+</div></section>
+<span id="probe" style="display:none"></span>
+<script>
+{
+const $=id=>document.getElementById(id);
+const tex=el=>{const M=window.MathJax;if(M&&M.typesetPromise){M.typesetClear&&M.typesetClear([el]);M.typesetPromise([el]).catch(()=>{})}};
+const L=5,NS=300,P=800,NL=30,NR=300,NLR=50,TAU=2*Math.PI;
+const ring=Array.from({length:6},(_,i)=>[1/6,2.5*Math.cos(i*Math.PI/3+Math.PI/6),2.5*Math.sin(i*Math.PI/3+Math.PI/6),.25]);
+const PRE={ring,three:[[.5,-2,-1.4,.35],[.3,2.1,-1,.35],[.2,0,2.2,.35]],four:[[.25,-1.8,-1.8,.3],[.25,1.8,-1.8,.3],[.25,-1.8,1.8,.3],[.25,1.8,1.8,.3]]};
+const DR=[{id:'zero',name:'No drift',tex:'b = 0'},{id:'ou',name:'Ornstein–Uhlenbeck',tex:'b = -k\\,x'}];
+const S={sel:'ou',seed:7,fwd:{},rev:null,heatKey:'',heat:null};
+let NU,T,K,DATA;
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function gauss(r){let u=0;while(!u)u=r();return Math.sqrt(-2*Math.log(u))*Math.cos(TAU*r())}
+const kOf=id=>id==='ou'?K:0;
+/* exact marginal: each isotropic Gaussian component stays isotropic Gaussian */
+function marg(id,t){const k=kOf(id),e=Math.exp(-k*t),e2=e*e;
+ const M={K:DATA.length,lw:[],mx:[],my:[],v:[],e};
+ DATA.forEach(([w,x,y,s],i)=>{M.lw[i]=Math.log(w);M.mx[i]=x*e;M.my[i]=y*e;M.v[i]=s*s*e2+(k>1e-9?NU*(1-e2)/(2*k):NU*t)});
+ return M}
+const lbuf=new Float64Array(8);
+function ev(M,x,y,out){let mx=-Infinity;
+ for(let i=0;i<M.K;i++){const dx=x-M.mx[i],dy=y-M.my[i];lbuf[i]=M.lw[i]-(dx*dx+dy*dy)/(2*M.v[i])-Math.log(TAU*M.v[i]);if(lbuf[i]>mx)mx=lbuf[i]}
+ let z=0,sx=0,sy=0;for(let i=0;i<M.K;i++){const e=Math.exp(lbuf[i]-mx);z+=e;sx+=e*(M.mx[i]-x)/M.v[i];sy+=e*(M.my[i]-y)/M.v[i]}
+ if(out){out[0]=sx/z;out[1]=sy/z}return mx+Math.log(z)}
+function pickComp(r){let u=r(),i=0;while(i<DATA.length-1&&u>DATA[i][0]){u-=DATA[i][0];i++}return i}
+let x0,y0,c0,Z;
+function rebuild(){
+ NU=+$('nu').value;T=+$('T').value;K=+$('k').value;DATA=PRE[$('data').value];
+ $('nuv').value=NU.toFixed(2);$('Tv').value=T.toFixed(1);$('kv').value=K.toFixed(2);
+ for(const id of['t1','t2','t3']){$(id).max=T;if(+$(id).value>T)$(id).value=id==='t2'?T*.15:T}
+ const r=rng(S.seed);x0=new Float32Array(P);y0=new Float32Array(P);c0=new Uint8Array(P);Z=new Float32Array(2*P*NS);
+ for(let n=0;n<P;n++){const i=pickComp(r),s=DATA[i][3];c0[n]=i;x0[n]=DATA[i][1]+s*gauss(r);y0[n]=DATA[i][2]+s*gauss(r)}
+ for(let i=0;i<Z.length;i++)Z[i]=gauss(r);
+ const h=T/NS,sq=Math.sqrt(NU*h);
+ for(const d of DR){const k=kOf(d.id),A=new Float32Array(P*(NS+1)*2);
+  for(let n=0;n<P;n++){let x=x0[n],y=y0[n];const o=n*(NS+1)*2;A[o]=x;A[o+1]=y;
+   for(let s=0;s<NS;s++){x+=-k*x*h+sq*Z[(n*NS+s)*2];y+=-k*y*h+sq*Z[(n*NS+s)*2+1];A[o+2*s+2]=x;A[o+2*s+3]=y}}
+  S.fwd[d.id]=A}
+ S.heatKey='';runReverse(false);drawAll()}
+
+/* colours and canvas helpers */
+let C={};
+function rgb(v){$('probe').style.color=`var(${v})`;return getComputedStyle($('probe')).color.match(/[\d.]+/g).slice(0,3).map(Number)}
+function readC(){for(const v of['--bg','--panel','--ink','--mute','--line','--acc','--blue','--c1','--c2','--c3','--c4','--c5','--c6'])C[v]=rgb(v);S.heatKey=''}
+const css=(a,al=1)=>`rgba(${a[0]|0},${a[1]|0},${a[2]|0},${al})`;
+const mix=(a,b,u)=>[a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u,a[2]+(b[2]-a[2])*u];
+const compC=i=>C['--c'+(i%6+1)];
+function fit(cv){const r=cv.getBoundingClientRect(),d=devicePixelRatio||1,w=Math.max(1,Math.round(r.width*d)),h=Math.max(1,Math.round(r.height*d));
+ if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}const c=cv.getContext('2d');c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,r.width,r.height);
+ const side=Math.min(r.width,r.height)-16,cx=r.width/2,cy=r.height/2,sc=side/(2*L);
+ return{c,side,X:x=>cx+x*sc,Y:y=>cy-y*sc,l:cx-side/2,t:cy-side/2,sc}}
+function frame(g,bgCol){const{c,l,t,side,X,Y}=g;c.strokeStyle=css(C['--line'],.9);c.lineWidth=1;
+ for(let v=-4;v<=4;v+=2){c.beginPath();c.moveTo(X(v),t);c.lineTo(X(v),t+side);c.moveTo(l,Y(v));c.lineTo(l+side,Y(v));c.stroke()}
+ c.font='13px "Red Hat Text",sans-serif';c.fillStyle=css(C['--mute']);c.textBaseline='bottom';c.textAlign='center';
+ for(const v of[-4,0,4])c.fillText(v,X(v)+(v===-4?8:v===4?-8:0),t+side-2);
+ c.textAlign='left';c.textBaseline='middle';for(const v of[-4,4])c.fillText(v,l+3,Y(v))}
+function dataRings(g,al=.8){const{c,X,Y,sc}=g;c.setLineDash([4,4]);c.lineWidth=1.3;
+ DATA.forEach(([w,x,y,s],i)=>{c.strokeStyle=css(compC(i),al);c.beginPath();c.arc(X(x),Y(y),2*s*sc,0,TAU);c.stroke()});c.setLineDash([])}
+function heatImg(M,res){const cv=document.createElement('canvas');cv.width=cv.height=res;const c=cv.getContext('2d'),img=c.createImageData(res,res),lp=new Float64Array(res*res);let mx=-Infinity;
+ for(let r=0;r<res;r++)for(let q=0;q<res;q++){const x=-L+(q+.5)/res*2*L,y=L-(r+.5)/res*2*L,v=ev(M,x,y);lp[r*res+q]=v;if(v>mx)mx=v}
+ for(let i=0;i<res*res;i++){const col=mix(C['--panel'],C['--blue'],Math.pow(Math.exp(lp[i]-mx),.55)*.85),o=i*4;img.data[o]=col[0];img.data[o+1]=col[1];img.data[o+2]=col[2];img.data[o+3]=255}
+ c.putImageData(img,0,0);return cv}
+function drawHeat(g,M,res,alpha=1){g.c.save();g.c.globalAlpha=alpha;g.c.imageSmoothingEnabled=true;g.c.drawImage(heatImg(M,res),g.l,g.t,g.side,g.side);g.c.restore()}
+function trails(g,A,n,steps,s0,s1,cls,al){const{c,X,Y}=g;c.lineWidth=1.1;
+ for(let i=0;i<n;i++){c.strokeStyle=css(compC(cls[i]),al);c.beginPath();const o=i*(steps+1)*2;const a=Math.min(s0,s1),b=Math.max(s0,s1);
+  for(let s=a;s<=b;s++){const px=X(A[o+2*s]),py=Y(A[o+2*s+1]);s===a?c.moveTo(px,py):c.lineTo(px,py)}c.stroke()}}
+function dotsAt(g,A,n,steps,s,cls,r=1.7,al=.8){const{c,X,Y}=g;for(let i=0;i<n;i++){const o=i*(steps+1)*2+2*s;c.fillStyle=css(compC(cls[i]),al);c.beginPath();c.arc(X(A[o]),Y(A[o+1]),r,0,TAU);c.fill()}}
+function clip(g){g.c.save();g.c.beginPath();g.c.rect(g.l,g.t,g.side,g.side);g.c.clip()}
+
+/* section 1 */
+$('cards').innerHTML=DR.map(d=>`<button class="card" type="button" id="card-${d.id}" data-id="${d.id}" aria-pressed="false"><b>${d.name}</b><i>\\(${d.tex}\\)</i><div class="sq"><canvas></canvas></div></button>`).join('');
+for(const b of document.querySelectorAll('.card'))b.addEventListener('click',()=>{S.sel=b.dataset.id;S.heatKey='';runReverse(false);drawAll()});
+function drawCard(d){const g=fit($('card-'+d.id).querySelector('canvas')),t1=+$('t1').value,s1=Math.round(t1/T*NS);
+ frame(g);dataRings(g,.7);clip(g);trails(g,S.fwd[d.id],NL,NS,0,s1,c0,.5);dotsAt(g,S.fwd[d.id],P,NS,s1,c0,1.6,.75);g.c.restore()}
+function drawCards(){$('t1v').value=(+$('t1').value).toFixed(2);for(const d of DR){$('card-'+d.id).setAttribute('aria-pressed',d.id===S.sel);drawCard(d)}}
+
+/* section 2 */
+function drawField(){const t=+$('t2').value,M=marg(S.sel,t),g=fit($('field')),key=[S.sel,t,NU,T,K,$('data').value,C['--bg'],g.side].join();
+ $('t2v').value=t.toFixed(2);
+ if(S.heatKey!==key){S.heat=heatImg(M,180);S.heatKey=key}
+ g.c.imageSmoothingEnabled=true;g.c.drawImage(S.heat,g.l,g.t,g.side,g.side);frame(g);dataRings(g,.45);
+ clip(g);
+ if($('dots').checked)dotsAt(g,S.fwd[S.sel],P,NS,Math.round(t/T*NS),c0,1.7,.85);
+ let smax=0;
+ if($('arr').checked){const n=g.side<380?13:19,cell=2*L/n,o=[0,0],vm=M.v.reduce((a,b)=>a+b,0)/M.K,s0=1.2/Math.sqrt(vm);let lmax=-Infinity;const pts=[];
+  for(let i=0;i<n;i++)for(let j=0;j<n;j++){const x=-L+(i+.5)*cell,y=-L+(j+.5)*cell,lp=ev(M,x,y,o);pts.push([x,y,o[0],o[1],lp]);if(lp>lmax)lmax=lp}
+  const c=g.c;c.strokeStyle=css(C['--ink']);c.fillStyle=css(C['--ink']);
+  for(const[x,y,sx,sy,lp]of pts){const m=Math.hypot(sx,sy);if(lp>lmax-9)smax=Math.max(smax,m);if(m<1e-9)continue;
+   const len=cell*g.sc*.9*Math.tanh(m/s0),ux=sx/m,uy=sy/m,al=Math.min(1,Math.max(.18,(lp-lmax+11)/6));
+   const ax=g.X(x)-ux*len/2,ay=g.Y(y)+uy*len/2,bx=ax+ux*len,by=ay-uy*len,hd=Math.min(6,len*.4);
+   c.globalAlpha=al;c.lineWidth=1.4;c.beginPath();c.moveTo(ax,ay);c.lineTo(bx,by);c.stroke();
+   c.beginPath();c.moveTo(bx,by);c.lineTo(bx-ux*hd-uy*hd*.55,by+uy*hd-ux*hd*.55);c.lineTo(bx-ux*hd+uy*hd*.55,by+uy*hd+ux*hd*.55);c.closePath();c.fill()}
+  c.globalAlpha=1}
+ g.c.restore();
+ $('fs').value=M.e.toFixed(3);$('fv').value=Math.sqrt(M.v[0]).toFixed(3);$('fm').value=$('arr').checked?smax.toFixed(1):'–'}
+
+/* section 3 */
+function runReverse(anim){const k=kOf(S.sel),N=+$('np').value,lam=+$('lam').value,ode=$('rm').value==='ode',h=T/NR,r=rng(S.seed*31+5),prior=$('rs').value==='prior';
+ $('lamv').value=lam.toFixed(2);
+ const MT=marg(S.sel,T);let mu=[0,0],c11=0,c12=0,c22=0;
+ DATA.forEach(([w],i)=>{mu[0]+=w*MT.mx[i];mu[1]+=w*MT.my[i]});
+ DATA.forEach(([w],i)=>{const dx=MT.mx[i]-mu[0],dy=MT.my[i]-mu[1];c11+=w*(MT.v[i]+dx*dx);c22+=w*(MT.v[i]+dy*dy);c12+=w*dx*dy});
+ const l11=Math.sqrt(c11),l21=c12/l11,l22=Math.sqrt(Math.max(1e-9,c22-l21*l21));
+ const A=new Float32Array(N*(NR+1)*2),x=new Float64Array(N),y=new Float64Array(N);
+ for(let n=0;n<N;n++){if(prior){const a=gauss(r),b=gauss(r);x[n]=mu[0]+l11*a;y[n]=mu[1]+l21*a+l22*b}
+  else{const i=pickComp(r),s=Math.sqrt(MT.v[i]);x[n]=MT.mx[i]+s*gauss(r);y[n]=MT.my[i]+s*gauss(r)}
+  A[(n*(NR+1)+NR)*2]=x[n];A[(n*(NR+1)+NR)*2+1]=y[n]}
+ const sq=Math.sqrt(NU*h),cf=(ode?.5:1)*NU*lam,o=[0,0];
+ for(let s=NR;s>0;s--){const M=marg(S.sel,s*h);
+  for(let n=0;n<N;n++){ev(M,x[n],y[n],o);
+   const dx=-k*x[n]-cf*o[0],dy=-k*y[n]-cf*o[1];
+   x[n]=x[n]-dx*h+(ode?0:sq*gauss(r));y[n]=y[n]-dy*h+(ode?0:sq*gauss(r));
+   x[n]=Math.max(-60,Math.min(60,x[n]));y[n]=Math.max(-60,Math.min(60,y[n]));
+   const q=(n*(NR+1)+s-1)*2;A[q]=x[n];A[q+1]=y[n]}}
+ const cls=new Uint8Array(N),cnt=new Array(DATA.length).fill(0);let off=0;
+ for(let n=0;n<N;n++){let b=0,bv=-Infinity,dm=Infinity;
+  DATA.forEach(([w,mx,my,s],i)=>{const d2=((x[n]-mx)**2+(y[n]-my)**2)/(s*s),l=Math.log(w)-.5*d2-2*Math.log(s);if(l>bv){bv=l;b=i}dm=Math.min(dm,Math.sqrt(d2))});cls[n]=b;cnt[b]++;if(dm>3)off++}
+ S.rev={A,N,cls};
+ $('bars').innerHTML=DATA.map(([w,mx,my],i)=>{const q=cnt[i]/N;return`<div class="bar"><span>(${(+mx.toFixed(1)).toFixed(1).replace('-0.0','0.0')}, ${(+my.toFixed(1)).toFixed(1).replace('-0.0','0.0')})</span><span class="tk"><span style="width:${(q*100).toFixed(1)}%;background:${css(compC(i))}"></span><em style="left:${(w*100).toFixed(1)}%"></em></span><output>${(q*100).toFixed(0)}%</output></div>`}).join('')+
+  `<div class="bar"><span>Beyond 3σ of all</span><span class="tk"><span style="width:${(off/N*100).toFixed(1)}%;background:var(--mute)"></span></span><output>${(off/N*100).toFixed(0)}%</output></div>`;
+ $('rnote').innerHTML=`Rows are data modes by centre; black ticks mark the true weights. ${DR.find(d=>d.id===S.sel).name}, ${ode?'ODE':'SDE'}, \\(\\lambda = ${lam.toFixed(2)}\\), ${prior?'started from a Gaussian with the mean and covariance of \\(p_T\\)':'started from the exact \\(p_T\\)'}. `+
+  (lam===0?'With \\(\\lambda = 0\\) nothing pulls particles back onto the data.':prior?'Where \\(p_T\\) is far from Gaussian (no drift, short T, weak k) the mismatch shows up as wrong weights or stray particles.':'With the exact score and exact \\(p_T\\) the weights match up to sampling noise and time-step error.');
+ tex($('rnote'));
+ if(anim&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animate('t3',T,0,3200,drawRev);else{$('t3').value=0;drawRev()}}
+function drawRev(){const v=S.rev;if(!v)return;const t=+$('t3').value,s=Math.round(t/T*NR),g=fit($('rev'));$('t3v').value=t.toFixed(2);
+ drawHeat(g,marg(S.sel,t),120,.8);frame(g);dataRings(g,.9);clip(g);
+ const nl=Math.min(NLR,v.N);trails(g,v.A,nl,NR,s,NR,v.cls,.45);dotsAt(g,v.A,v.N,NR,s,v.cls,1.6,.8);g.c.restore()}
+
+/* animation helper: slider id from a to b */
+let anims={};
+function animate(id,a,b,ms,draw){cancelAnimationFrame(anims[id]);const t0=performance.now();
+ const st=now=>{const u=Math.min(1,(now-t0)/ms);$(id).value=a+(b-a)*u;draw();if(u<1)anims[id]=requestAnimationFrame(st)};anims[id]=requestAnimationFrame(st)}
+
+function drawAll(){$('selName').textContent=DR.find(d=>d.id===S.sel).name;
+ const d=DR.find(q=>q.id===S.sel);
+ $('how').innerHTML=d.id==='ou'?`For \\(b=-k\\,x\\), each isotropic Gaussian component stays Gaussian: \\(m_i(t)=m_i e^{-kt}\\) and \\(v_i(t)=\\sigma_i^2e^{-2kt}+\\tfrac{\\nu}{2k}(1-e^{-2kt})\\). So \\(\\nabla\\log p_t(x)=\\sum_i r_i(x)\\,\\frac{m_i(t)-x}{v_i(t)}\\), where \\(r_i\\) are the posterior weights.`
+  :`For \\(b=0\\), the means stay fixed and the variances grow linearly: \\(v_i(t)=\\sigma_i^2+\\nu t\\). So \\(\\nabla\\log p_t(x)=\\sum_i r_i(x)\\,\\frac{m_i-x}{v_i(t)}\\), where \\(r_i\\) are the posterior weights.`;
+ tex($('how'));drawCards();drawField();drawRev()}
+
+let pend=0;const sched=fn=>{if(pend)cancelAnimationFrame(pend);pend=requestAnimationFrame(()=>{pend=0;fn()})};
+for(const id of['nu','T','k'])$(id).addEventListener('input',()=>{$(id+'v').value=(+$(id).value).toFixed(id==='T'?1:2);sched(rebuild)});
+$('data').addEventListener('change',rebuild);
+$('reseed').addEventListener('click',()=>{S.seed=(S.seed*48271+11)%2147483647;rebuild()});
+$('t1').addEventListener('input',drawCards);
+$('play1').addEventListener('click',()=>animate('t1',0,T,4000,drawCards));
+$('t2').addEventListener('input',drawField);
+for(const id of['arr','dots'])$(id).addEventListener('change',drawField);
+$('sweep').addEventListener('click',()=>animate('t2',0,T,5000,drawField));
+$('t3').addEventListener('input',drawRev);
+$('run').addEventListener('click',()=>runReverse(true));
+for(const id of['rm','rs','np'])$(id).addEventListener('change',()=>runReverse(true));
+$('lam').addEventListener('input',()=>{$('lamv').value=(+$('lam').value).toFixed(2)});
+$('lam').addEventListener('change',()=>runReverse(true));
+const ro=new ResizeObserver(()=>sched(()=>{S.heatKey='';drawCards();drawField();drawRev()}));ro.observe(document.body);
+const mo=new MutationObserver(()=>{readC();drawAll()});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{readC();drawAll()});
+readC();rebuild();
+document.fonts&&document.fonts.ready.then(()=>drawAll());
+}
+</script>
+</body>
+</html>
